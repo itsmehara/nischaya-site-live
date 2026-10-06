@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start a product · Nischaya Creative Soft</title>
+<meta name="description" content="Pick a package, add any extra features you need, and send us your plan.">
+<link rel="canonical" href="https://nischayacreativesoft.com/start.html">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&amp;family=Work+Sans:wght@400;600&amp;display=swap">
+<style>
+  /* Start a product, v2: pick one package, tick optional add-ons (searchable), describe anything else. */
+  :root { color-scheme: dark; --bg: #0A140F; --card: rgba(255,255,255,.035); --field: rgba(0,0,0,.28); --line: rgba(160,220,180,.14); --text: #F5F1E9; --muted: #AFBDB2; --accent: #F3961F; --ink: #17130A; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(111,190,140,.14), transparent 70%) no-repeat, linear-gradient(180deg, #0F1F17, #0A140F 60%) fixed, var(--bg); color: var(--text); font-family: 'Work Sans', system-ui, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 32px; background: rgba(10,20,15,.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 25px; }
+  .brand img { width: 46px; height: 46px; object-fit: contain; }
+  @media (max-width: 520px) { .brand { font-size: 19px; gap: 10px; } .brand img { width: 36px; height: 36px; } .to-site { display: none; } .top { padding-top: 14px; padding-bottom: 14px; } }
+  .back { font-size: 16px; color: var(--muted); }
+  .back:hover { color: var(--accent); }
+  main { max-width: 1680px; margin: 0 auto; padding: 22px 40px 40px; }
+  @media (max-width: 900px) { main { padding-bottom: 88px; } } /* room for the back-to-top button below the plan */
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; margin: 0; }
+  .intro { display: flex; align-items: baseline; gap: 8px 28px; flex-wrap: wrap; margin-bottom: 18px; }
+  .lede { color: var(--muted); font-size: 16px; line-height: 1.55; max-width: 80ch; margin: 0; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+  .steps { display: grid; gap: 16px; min-width: 0; }
+  .card { min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px; scroll-margin-top: calc(var(--toph, 87px) + 12px); }
+  .plan { position: sticky; top: calc(var(--toph, 87px) + 16px); }
+  h2 { font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin: 0; }
+  .step-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .opt { font-size: 14px; color: var(--muted); }
+  .sub { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0 0 12px; }
+  /* Step 1: setup questions (yes / no toggles reveal a detail field) */
+  .qs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; }
+  /* Each question shares its rows (label / buttons / extra) with the question beside it, so the Yes / Not yet /
+     Not sure pills line up even when one label wraps; the label sits right above its pill. */
+  .qs > div { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  .qs > div > * { align-self: start; }
+  .qs > div > .q-label { align-self: end; }
+  #go { grid-row: span 3; align-self: end; justify-self: end; }
+  @media (min-width: 1280px) {
+    .setup-card { position: relative; }
+    .qs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    #go { position: absolute; top: 16px; right: 22px; }
+  }
+  .q-label { display: block; font-size: 15px; font-weight: 600; margin: 0 0 8px; }
+  /* Yes / Not yet / Not sure: one pill split into three equal parts. One part lights up; tap it again to clear. */
+  .yn { display: flex; width: 100%; max-width: 330px; padding: 3px; gap: 2px; background: var(--field); border: 1px solid rgba(255,255,255,.36); border-radius: 999px; }
+  .yn button { flex: 1 1 0; min-width: 0; font: inherit; font-size: 14.5px; color: #DCD6CB; background: transparent; border: 0; border-radius: 999px; padding: 6px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; transition: background .15s, color .15s; position: relative; }
+  .yn button + button::before { content: ""; position: absolute; left: -1px; top: 28%; bottom: 28%; width: 1px; background: rgba(255,255,255,.14); }
+  .yn button:hover { background: rgba(255,255,255,.07); color: var(--text); }
+  .yn button[aria-pressed="true"] { background: var(--accent); color: var(--ink); font-weight: 600; }
+  .yn button[aria-pressed="true"]::before, .yn button[aria-pressed="true"] + button::before, .yn button:hover::before, .yn button:hover + button::before { display: none; }
+  .yn button:focus-visible, .field:focus-visible, .check input:focus-visible, #go:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .field { display: block; width: 100%; margin-top: 8px; font: inherit; font-size: 15px; color: var(--text); background: var(--field); border: 1px solid rgba(255,255,255,.36); border-radius: 10px; padding: 9px 12px; color-scheme: dark; }
+  .field:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); } /* keyboard focus stays visible (date field included) */
+  .field::placeholder { color: #8A978D; }
+  textarea.field { resize: vertical; line-height: 1.5; }
+  .field:disabled { opacity: .45; }
+  .q-help { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+  .field.when-date { width: auto; max-width: 100%; margin-top: 0; }
+  .when-more { margin-top: 10px; } .when-more .q-help { margin-top: 4px; }
+  .check { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: var(--muted); cursor: pointer; }
+  .check input { width: 18px; height: 18px; accent-color: var(--accent); }
+  #go { font: inherit; font-weight: 600; font-size: 16px; border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; background: var(--accent); color: var(--ink); }
+  .sum-setup { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 6px; font-size: 14px; color: #C9C3B8; }
+  .sum-setup b { color: var(--text); font-weight: 600; }
+  /* Step 2: packages, pick exactly one (radio group) */
+  .pkgs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 1100px) { .pkgs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .pkg { position: relative; display: flex; flex-direction: column; justify-content: flex-start; font: inherit; text-align: left; cursor: pointer; color: var(--text); background: var(--field); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 11px 12px 11px 40px; transition: border-color .15s, background .15s; }
+  .pkg::before { content: ""; position: absolute; left: 13px; top: 13px; width: 17px; height: 17px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); transition: border-color .15s, box-shadow .15s; }
+  .pkg b { display: block; font-size: 15px; font-weight: 600; }
+  .pkg span { display: block; font-size: 13px; line-height: 1.4; color: var(--muted); margin-top: 2px; }
+  .pkg em { display: block; font-style: normal; font-size: 12px; color: #A3B1A6; margin-top: auto; padding-top: 5px; }
+  .pkg:hover { border-color: var(--accent); }
+  .pkg[aria-checked="true"] { border-color: var(--accent); background: rgba(243,150,31,.1); }
+  .pkg[aria-checked="true"]::before { border-color: var(--accent); box-shadow: inset 0 0 0 4px #1a1a12, inset 0 0 0 10px var(--accent); }
+  .pkg.custom { border-style: dashed; }
+  /* Step 3: add-ons as checkboxes, with search over the whole catalogue */
+  .find { position: relative; margin-bottom: 10px; color: var(--muted); }
+  .find svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #q { width: 100%; font: inherit; font-size: 16px; color: var(--text); background: var(--field); border: 1px solid rgba(255,255,255,.36); border-radius: 10px; padding: 10px 14px 10px 42px; }
+  #q:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+  #q::placeholder { color: #8A978D; }
+  .list-label { font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #DDE5DF; margin: 0 0 8px; }
+  /* Scrolls inside a short box so the page stays compact; the fade hints there is more below */
+  .addons { list-style: none; margin: 0; padding: 2px 6px 14px 2px; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; max-height: 208px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.2) transparent; }
+  .addons-wrap { -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(180deg, #000 calc(100% - 28px), transparent); }
+  .addons-wrap.at-end { -webkit-mask-image: none; mask-image: none; }
+  .addon label { display: flex; align-items: flex-start; gap: 12px; height: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--field); cursor: pointer; transition: border-color .15s, background .15s; }
+  .addon label:hover { border-color: rgba(243,150,31,.6); }
+  .addon input { appearance: none; -webkit-appearance: none; flex-shrink: 0; width: 20px; height: 20px; margin: 1px 0 0; border: 2px solid rgba(255,255,255,.5); border-radius: 6px; display: grid; place-items: center; cursor: pointer; }
+  .addon input::after { content: ""; width: 10px; height: 6px; border: solid var(--ink); border-width: 0 0 2.5px 2.5px; transform: rotate(-45deg) translate(1px, -1px); opacity: 0; }
+  .addon input:checked { background: var(--accent); border-color: var(--accent); }
+  .addon input:checked::after { opacity: 1; }
+  .addon input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .addon input:checked + div b { color: var(--text); }
+  .addon:not(.in):has(input:checked) label { border-color: rgba(243,150,31,.55); background: rgba(243,150,31,.08); }
+  .addon div { min-width: 0; }
+  .addon b { display: block; font-size: 14.5px; font-weight: 600; color: #DCD6CB; }
+  .addon i { display: block; font-style: normal; font-size: 13px; line-height: 1.4; color: var(--muted); margin-top: 2px; }
+  .addon small { display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: #A3B1A6; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 1px 7px; }
+  .addon.in label, .addon.later label { cursor: default; }
+  .addon.in label { border-color: var(--line); background: transparent; }
+  .addon.in b { color: #A3B1A6; }
+  .addon.in label:hover, .addon.later label:hover { border-color: var(--line); }
+  .addon.in input { background: rgba(243,150,31,.35); border-color: transparent; cursor: default; }
+  .addon.in input::after { opacity: 1; }
+  .addon.later label { background: repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 5px, transparent 5px 10px); border-style: dashed; }
+  .addon.later b { color: #7E8A81; }
+  .addon.later input { cursor: not-allowed; opacity: .5; }
+  .more { font: inherit; font-size: 15px; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 0; margin-top: 10px; cursor: pointer; }
+  .more:hover { text-decoration: underline; }
+  .empty { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0; }
+  /* Step 4 */
+  textarea { width: 100%; font: inherit; font-size: 17px; line-height: 1.5; color: var(--text); background: var(--field); border: 1px solid rgba(255,255,255,.36); border-radius: 12px; padding: 14px; resize: vertical; }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+  textarea::placeholder { color: #8A978D; }
+  /* Plan summary */
+  .btn { display: block; width: 100%; font: inherit; font-weight: 600; font-size: 17px; border: 0; border-radius: 999px; padding: 13px 22px; margin-top: 18px; cursor: pointer; background: var(--accent); color: var(--ink); text-align: center; }
+  .sum-pkg { padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(243,150,31,.4); background: rgba(243,150,31,.07); }
+  .sum-pkg b { display: block; font-size: 17px; }
+  .sum-pkg summary { cursor: pointer; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .sum-pkg summary:hover { color: var(--accent); }
+  .sum-pkg ul { margin: 10px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #C9C3B8; max-height: 240px; overflow-y: auto; }
+  .sum-h { font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #DDE5DF; margin: 20px 0 10px; }
+  .picked { list-style: none; margin: 0; padding: 0 4px 0 0; display: grid; gap: 6px; max-height: 240px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.2) transparent; }
+  .picked li { display: flex; align-items: center; gap: 10px; padding: 8px 6px 8px 14px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 15px; animation: pIn .25s ease-out; }
+  .picked li span { flex: 1; min-width: 0; }
+  .rm { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 0; background: transparent; color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer; }
+  .rm:hover { background: rgba(255,255,255,.08); color: var(--text); }
+  .total { font-size: 15px; color: var(--muted); margin: 18px 0 0; }
+  @keyframes pIn { from { opacity: 0; transform: translateY(-4px); } }
+  .fine { font-size: 13px; line-height: 1.5; color: #A3B1A6; margin: 12px 0 0; }
+  .pkg:focus-visible, .btn:focus-visible, .more:focus-visible, .rm:focus-visible, textarea:focus-visible, .top a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .picked li { animation: none; } .pkg, .addon label { transition: none; } }
+  @media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } .plan { position: static; } }
+  .setup-card { container-type: inline-size; }
+  @container (max-width: 540px) { .qs { grid-template-columns: minmax(0, 1fr); } #go { justify-self: start; } } /* one column when two would cut off the Yes / Not yet / Not sure labels */
+  @media (max-width: 560px) { main, .top { padding-left: 16px; padding-right: 16px; } main { padding-top: 20px; } h1 { font-size: 28px; } .card { padding: 16px; } .pkgs, .addons { grid-template-columns: minmax(0, 1fr); } .addons { max-height: 300px; } }
+  /* Back to top: appears after scrolling, bottom-right */
+  .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 30; width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer; background: var(--accent); color: var(--ink); display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.45); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s, transform .2s; }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { transform: translateY(-2px); }
+  .to-top:focus-visible { outline: 2px solid #FBF8F2; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="assets/img/lotus-01-720.webp" alt="">Nischaya Creative Soft</a>
+  <a class="back" href="index.html#start">← Back<span class="to-site"> to site</span></a>
+</header>
+<main>
+  <div class="intro"><h1>Start a product</h1>
+  <p class="lede">A few quick questions about your setup and launch date, then pick the package closest to what you need and tick any extra features. Your plan builds up as you go.</p></div>
+  <div class="grid">
+    <div class="steps">
+      <section class="card setup-card" aria-labelledby="s0">
+        <div class="step-head"><h2 id="s0">1 · Your setup</h2></div>
+        <p class="sub">So we know what's already in place and when you'd like to go live.</p>
+        <div class="qs">
+          <div>
+            <span class="q-label" id="q-domain">Already bought a domain name?</span>
+            <div class="yn" role="group" aria-labelledby="q-domain" data-q="domain"></div>
+            <div data-for="domain" hidden><input class="field" id="domain-name" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="Your domain, e.g. mybakery.in" aria-label="Your domain name"></div>
+          </div>
+          <div>
+            <span class="q-label" id="q-server">Have a cloud server (VPS) or hosting?</span>
+            <div class="yn" role="group" aria-labelledby="q-server" data-q="server"></div>
+            <div data-for="server" hidden><textarea class="field" id="server-desc" rows="2" placeholder="Describe it, e.g. Hostinger VPS, 2 GB RAM, Ubuntu, or shared cPanel hosting" aria-label="Describe your server or hosting"></textarea>
+            <p class="q-help">Provider and plan are enough. Don't share passwords here.</p></div>
+          </div>
+          <div>
+            <label class="q-label" for="launch">When do you want to launch?</label>
+            <input class="field when-date" id="launch" type="date">
+            <div class="when-more"><label class="check"><input type="checkbox" id="launch-flex"> No fixed date yet</label>
+            <p class="q-help">A tentative date is fine.</p></div>
+          </div>
+          <button id="go" type="button">Continue to features ↓</button>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="s1">
+        <div class="step-head"><h2 id="s1">2 · Choose a package</h2></div>
+        <p class="sub">Each package already includes design, build, hosting, testing and support.</p>
+        <div class="pkgs" id="pkgs" role="radiogroup" aria-labelledby="s1"></div>
+      </section>
+      <section class="card" aria-labelledby="s2">
+        <div class="step-head"><h2 id="s2">3 · Add extra features</h2><span class="opt">Optional</span></div>
+        <p class="sub" id="s2-sub">Tick anything you'd like on top. Search to find a specific feature.</p>
+        <div class="find"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search features, e.g. payments, WhatsApp, login" aria-label="Search features" autocomplete="off"></div>
+        <p class="list-label" id="list-label" aria-live="polite">Popular add-ons</p>
+        <div class="addons-wrap"><ul class="addons" id="addons"></ul></div>
+        <p class="empty" id="nomatch" hidden>No features match that search. Describe it in step 4 and we'll include it.</p>
+        <button class="more" id="more" type="button" hidden></button>
+      </section>
+      <section class="card" aria-labelledby="s3">
+        <div class="step-head"><h2 id="s3">4 · Anything else?</h2><span class="opt">Optional</span></div>
+        <p class="sub">Your business, your users, or something special you have in mind.</p>
+        <textarea id="idea" rows="3" aria-labelledby="s3" placeholder="e.g. A booking app for my clinic: patients get a token number and a WhatsApp reminder, and the front desk sees the live queue."></textarea>
+      </section>
+    </div>
+    <aside class="card plan" aria-labelledby="plan-h">
+      <h2 id="plan-h" style="margin-bottom: 14px;">Your plan</h2>
+      <ul class="sum-setup" id="sum-setup" hidden></ul>
+      <div id="sum-pkg"></div>
+      <p class="empty" id="sum-empty">Choose a package to get started, or pick "Something else" and add features yourself.</p>
+      <div id="sum-add" hidden><p class="sum-h" id="sum-add-h">Extras</p><ul class="picked" id="picked"></ul></div>
+      <p class="total" id="total" aria-live="polite"></p>
+      <a class="btn" id="send" href="index.html#contact">Send this plan</a>
+      <p class="fine">Opens our contact form with your plan filled in. Add your details and send. Our team then discusses scope, timeline and pricing with you.</p>
+    </aside>
+  </div>
+</main>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+// Sticky header height feeds the plan column offset; back-to-top shows after the first screen.
+(() => {
+  const top = document.querySelector('.top'), btn = document.getElementById('to-top');
+  const setH = () => document.documentElement.style.setProperty('--toph', top.offsetHeight + 'px');
+  setH(); addEventListener('resize', setH);
+  addEventListener('scroll', () => btn.classList.toggle('show', scrollY > innerHeight * 0.6), { passive: true });
+  btn.addEventListener('click', () => { scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); top.querySelector('a').focus({ preventScroll: true }); });
+})();
+</script>
+<script src="assets/js/catalog.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
+const FEAT = new Map(); // id -> { name, hint, group }
+NSC_CATALOG.forEach((g) => g.items.forEach(([id, name, hint]) => FEAT.set(id, { name, hint, group: g.name })));
+const LATER = new Set(NSC_LATER.ids);
+// Shown before any search: the extras people ask for most. Ids must exist in catalog.js.
+const POPULAR = ['gateway', 'wa-order', 'login', 'booking', 'chatbot', 'invoices', 'multilang', 'blog', 'reviews', 'pwa', 'wa-alerts', 'seo-advanced', 'coupons', 'dashboards', 'content-admin', 'crm-lite'].filter((id) => FEAT.has(id));
+const MAX_RESULTS = 24;
+
+// Step 1: setup questions. Answers stay on this page and travel to the contact form via sessionStorage (never the URL).
+const setup = { domain: '', server: '' };
+const YN = [['yes', 'Yes'], ['no', 'Not yet'], ['unsure', 'Not sure']];
+document.querySelectorAll('.yn').forEach((g) => g.append(...YN.map(([v, t]) => {
+  const b = el('button', '', t); b.type = 'button'; b.dataset.v = v; b.setAttribute('aria-pressed', 'false'); return b;
+})));
+const syncYN = () => document.querySelectorAll('.yn').forEach((g) => {
+  const q = g.dataset.q; g.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(setup[q] === b.dataset.v)));
+  document.querySelector(`[data-for="${q}"]`).hidden = setup[q] !== 'yes';
+});
+document.querySelector('.qs').addEventListener('click', (e) => {
+  const b = e.target.closest('.yn button'); if (!b) return;
+  const q = b.parentNode.dataset.q;
+  setup[q] = setup[q] === b.dataset.v ? '' : b.dataset.v; // tap the lit part again to clear the answer
+  syncYN(); renderSetup();
+  if (setup[q] === 'yes') document.querySelector(`[data-for="${q}"] .field`).focus();
+});
+document.querySelector('.qs').addEventListener('keydown', (e) => {
+  const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key], g = e.target.closest('.yn'); if (!d || !g) return;
+  e.preventDefault(); const all = [...g.children]; all[(all.indexOf(e.target) + d + all.length) % all.length].focus(); // Space/Enter picks
+});
+$('launch').min = new Date().toISOString().slice(0, 10);
+$('launch-flex').addEventListener('change', () => { $('launch').disabled = $('launch-flex').checked; renderSetup(); });
+['domain-name', 'server-desc', 'launch'].forEach((id) => $(id).addEventListener('input', renderSetup));
+$('go').addEventListener('click', () => {
+  // Focus first: moving focus after starting a smooth scroll can cancel the scroll in Chrome.
+  $('pkgs').querySelector('[tabindex="0"]').focus({ preventScroll: true });
+  $('s1').closest('.card').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
+const fmtDate = (v) => new Date(v + 'T00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+const setupLines = () => {
+  const ans = { yes: 'Yes', no: 'Not yet', unsure: 'Not sure' }, out = [];
+  if (setup.domain) out.push(['Domain', setup.domain === 'yes' && $('domain-name').value.trim() ? `Yes: ${$('domain-name').value.trim()}` : ans[setup.domain]]);
+  if (setup.server) out.push(['Server / hosting', setup.server === 'yes' && $('server-desc').value.trim() ? `Yes: ${$('server-desc').value.trim()}` : ans[setup.server]]);
+  if ($('launch-flex').checked) out.push(['Launch', 'No fixed date yet']);
+  else if ($('launch').value) out.push(['Launch', `Around ${fmtDate($('launch').value)}`]);
+  return out;
+};
+function renderSetup() {
+  const lines = setupLines();
+  $('sum-setup').replaceChildren(...lines.map(([k, v]) => { const li = el('li'); li.append(el('b', '', k + ': '), v); return li; }));
+  $('sum-setup').hidden = !lines.length;
+  $('sum-empty').hidden = pkg !== null || extras.size > 0 || lines.length > 0;
+}
+syncYN();
+
+let pkg = null;            // index into NSC_PRESETS, 'custom', or null (nothing chosen yet)
+const extras = new Set();  // add-on feature ids on top of the package
+let showAll = false;
+const included = () => new Set(typeof pkg === 'number' ? NSC_PRESETS[pkg].ids.filter((id) => !LATER.has(id)) : []);
+
+// Step 1: package cards (radio group, arrow keys move the choice)
+const choices = [...NSC_PRESETS.map((p, i) => ({ key: i, name: p.name, note: p.note, n: p.ids.filter((id) => !LATER.has(id)).length })),
+  { key: 'custom', name: 'Something else', note: 'No package: pick only the features you want below.' }];
+$('pkgs').append(...choices.map((c) => {
+  const b = el('button', 'pkg' + (c.key === 'custom' ? ' custom' : '')); b.type = 'button'; b.setAttribute('role', 'radio'); b.dataset.key = c.key;
+  b.append(el('b', '', c.name), el('span', '', c.note)); if (c.n) b.append(el('em', '', `${c.n} features included`)); return b;
+}));
+const choose = (key) => {
+  pkg = key === 'custom' ? 'custom' : Number(key);
+  const inc = included(); inc.forEach((id) => extras.delete(id)); // anything now in the package is no longer an extra
+  render();
+};
+$('pkgs').addEventListener('click', (e) => { const b = e.target.closest('.pkg'); if (b) choose(b.dataset.key); });
+$('pkgs').addEventListener('keydown', (e) => {
+  const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!d) return;
+  e.preventDefault(); const all = [...$('pkgs').children], i = Math.max(0, all.indexOf(document.activeElement));
+  const next = all[(i + d + all.length) % all.length]; next.focus(); choose(next.dataset.key);
+});
+
+// Step 2: add-on checkboxes. No search: popular list. Search: matches across the whole catalogue.
+const addonRow = (id, inc) => {
+  const f = FEAT.get(id), li = el('li', 'addon'), lab = el('label'), cb = el('input'), txt = el('div');
+  cb.type = 'checkbox'; cb.value = id; txt.append(el('b', '', f.name), el('i', '', f.hint));
+  if (LATER.has(id)) { li.classList.add('later'); cb.disabled = true; txt.append(el('small', '', 'Later')); lab.title = NSC_LATER.note; }
+  else if (inc.has(id)) { li.classList.add('in'); cb.checked = true; cb.disabled = true; txt.append(el('small', '', 'In your package')); }
+  else cb.checked = extras.has(id);
+  lab.append(cb, txt); li.append(lab); return li;
+};
+function renderAddons() {
+  const q = $('q').value.trim().toLowerCase(), inc = included();
+  let ids;
+  if (!q) ids = POPULAR;
+  else {
+    const words = q.split(/\s+/);
+    ids = [...FEAT].filter(([, f]) => { const hay = `${f.name} ${f.hint} ${f.group}`.toLowerCase(); return words.every((w) => hay.includes(w)); }).map(([id]) => id);
+  }
+  const shown = q && !showAll ? ids.slice(0, MAX_RESULTS) : ids;
+  $('addons').replaceChildren(...shown.map((id) => addonRow(id, inc)));
+  $('list-label').textContent = q ? `${ids.length} feature${ids.length === 1 ? '' : 's'} found` : 'Popular add-ons';
+  $('list-label').hidden = q && !ids.length;
+  $('nomatch').hidden = !q || ids.length > 0;
+  $('more').hidden = shown.length === ids.length;
+  $('more').textContent = `Show all ${ids.length} results`;
+  $('addons').scrollTop = 0; syncFade();
+}
+const syncFade = () => { const a = $('addons'); a.parentNode.classList.toggle('at-end', a.scrollTop + a.clientHeight >= a.scrollHeight - 4); };
+$('addons').addEventListener('scroll', syncFade, { passive: true });
+$('q').addEventListener('input', () => { showAll = false; renderAddons(); });
+$('more').addEventListener('click', () => { showAll = true; renderAddons(); });
+$('addons').addEventListener('change', (e) => {
+  const cb = e.target; if (cb.type !== 'checkbox') return;
+  cb.checked ? extras.add(cb.value) : extras.delete(cb.value); renderPlan();
+});
+
+// Plan summary
+function renderPlan() {
+  const inc = included(), p = typeof pkg === 'number' ? NSC_PRESETS[pkg] : null;
+  const box = $('sum-pkg'); box.replaceChildren();
+  if (p) {
+    const d = el('div', 'sum-pkg'), det = el('details'), ul = el('ul');
+    det.append(el('summary', '', `${inc.size} features included`));
+    inc.forEach((id) => ul.append(el('li', '', FEAT.get(id).name))); det.append(ul);
+    d.append(el('b', '', p.name), det); box.append(d);
+  } else if (pkg === 'custom') {
+    const d = el('div', 'sum-pkg'); d.append(el('b', '', 'Custom plan')); box.append(d);
+  }
+  $('sum-empty').hidden = pkg !== null || extras.size > 0 || setupLines().length > 0;
+  $('sum-add').hidden = extras.size === 0;
+  $('sum-add-h').textContent = p ? `Extras (${extras.size})` : `Features (${extras.size})`;
+  $('picked').replaceChildren(...[...extras].map((id) => {
+    const li = el('li'), x = el('button', 'rm', '×');
+    x.type = 'button'; x.dataset.id = id; x.setAttribute('aria-label', `Remove ${FEAT.get(id).name}`);
+    li.append(el('span', '', FEAT.get(id).name), x); return li;
+  }));
+  const n = inc.size + extras.size;
+  $('total').textContent = n ? `${n} feature${n > 1 ? 's' : ''} in total` : '';
+}
+$('picked').addEventListener('click', (e) => { const x = e.target.closest('.rm'); if (x) { extras.delete(x.dataset.id); render(); } });
+
+function render() {
+  document.querySelectorAll('.pkg').forEach((b) => {
+    const on = String(pkg) === b.dataset.key; b.setAttribute('aria-checked', String(on)); b.tabIndex = on || (pkg === null && b === b.parentNode.firstChild) ? 0 : -1;
+  });
+  $('s2-sub').textContent = typeof pkg === 'number'
+    ? `Tick anything you'd like on top of ${NSC_PRESETS[pkg].name}. Search to find a specific feature.`
+    : "Tick the features you'd like. Search to find a specific feature.";
+  renderAddons(); renderPlan();
+}
+render();
+
+// The whole planner (package, extras, setup answers, idea) is kept in sessionStorage so "Edit plan" on the contact
+// form brings it back as it was. It never leaves this browser tab.
+const STATE_KEY = 'nsc-plan-state';
+const saveState = () => {
+  try {
+    sessionStorage.setItem(STATE_KEY, JSON.stringify({ pkg, extras: [...extras], setup, domain: $('domain-name').value,
+      server: $('server-desc').value, launch: $('launch').value, flex: $('launch-flex').checked, idea: $('idea').value }));
+  } catch (err) {}
+};
+(() => {
+  let s = null; try { s = JSON.parse(sessionStorage.getItem(STATE_KEY) || 'null'); } catch (err) {}
+  if (!s) return;
+  ['domain', 'server'].forEach((k) => { if (YN.some(([v]) => v === s.setup?.[k])) setup[k] = s.setup[k]; });
+  $('domain-name').value = s.domain || ''; $('server-desc').value = s.server || ''; $('idea').value = s.idea || '';
+  $('launch').value = s.launch || ''; $('launch-flex').checked = !!s.flex; $('launch').disabled = !!s.flex;
+  pkg = s.pkg === 'custom' || NSC_PRESETS[s.pkg] ? s.pkg : null;
+  const inc = included();
+  (s.extras || []).forEach((id) => { if (FEAT.has(id) && !LATER.has(id) && !inc.has(id)) extras.add(id); });
+  syncYN(); render(); renderSetup();
+})();
+addEventListener('pagehide', saveState);
+
+// Send this plan: all feature ids (package + extras) in ?plan=, the package name in ?pkg=, extras in ?add=;
+// the free-text idea and setup answers go via sessionStorage. index.html writes them into the contact form.
+$('send').addEventListener('click', (e) => {
+  e.preventDefault();
+  saveState();
+  const idea = $('idea').value.trim();
+  const su = setupLines();
+  try {
+    idea ? sessionStorage.setItem('nsc-idea', idea) : sessionStorage.removeItem('nsc-idea');
+    su.length ? sessionStorage.setItem('nsc-setup', JSON.stringify(su)) : sessionStorage.removeItem('nsc-setup');
+  } catch (err) {}
+  const all = [...included(), ...extras], q = new URLSearchParams();
+  if (all.length) q.set('plan', all.join(','));
+  if (typeof pkg === 'number') { q.set('pkg', NSC_PRESETS[pkg].name); if (extras.size) q.set('add', [...extras].join(',')); }
+  location.href = 'index.html' + (all.length ? '?' + q.toString().replace(/%2C/g, ',') : '') + '#contact';
+});
+</script>
+</body>
+</html>

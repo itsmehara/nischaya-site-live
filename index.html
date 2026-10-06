@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Development &amp; Business Websites | Nischaya Creative Soft</title>
+<meta name="description" content="End-to-end product development: strategy, design, engineering, AI and DevOps.">
+<!-- Organization structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nischaya Creative Soft",
+  "url": "https://nischayacreativesoft.com/",
+  "logo": "https://nischayacreativesoft.com/assets/img/lotus-19.webp",
+  "description": "End-to-end product development: strategy, design, engineering, AI and DevOps.",
+  "email": "nischaya.creativesoft@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 108/part, 335/1, Madhavapuri Township, South Avenue, PJR Enclave, Chandanagar",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500050",
+    "addressCountry": "IN"
+  },
+  "location": {
+    "@type": "Place",
+    "geo": { "@type": "GeoCoordinates", "latitude": 17.506132, "longitude": 78.338084 }
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer enquiries",
+    "email": "nischaya.creativesoft@gmail.com",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "17:00"
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/lotus-19.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/lotus-01-720.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&amp;family=Work+Sans:wght@400;600&amp;display=swap">
+<link rel="canonical" href="https://nischayacreativesoft.com/">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<style>
+  html { scroll-padding-top: var(--navh, 80px); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { margin: 0; background: #0B0B0C; font-family: 'Work Sans', sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .nsc-btn { transition: transform .15s ease, opacity .15s ease; white-space: nowrap; }
+  .nsc-btn:hover { transform: translateY(-1px); opacity: .92; }
+  .nsc-card { transition: transform .2s ease, border-color .2s ease; }
+  .nsc-card:hover { transform: translateY(-3px); }
+  /* ===== Lotus motion system: pure-CSS timelines that only animate transform / opacity / clip-path (no JS timers, no jitter) ===== */
+  .lx-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+  .lx-m01 { -webkit-mask: url(assets/img/lotus-01-720.webp) center / contain no-repeat; mask: url(assets/img/lotus-01-720.webp) center / contain no-repeat; }
+  .lx-m11 { -webkit-mask: url(assets/img/lotus-11.webp) center / contain no-repeat; mask: url(assets/img/lotus-11.webp) center / contain no-repeat; }
+  .lx-m19 { -webkit-mask: url(assets/img/lotus-19.webp) center / contain no-repeat; mask: url(assets/img/lotus-19.webp) center / contain no-repeat; }
+  .lx-sheen { position: absolute; inset: 0; overflow: hidden; mix-blend-mode: screen; pointer-events: none; }
+  .lx-band { position: absolute; top: -25%; bottom: -25%; left: 0; width: 45%; background: linear-gradient(90deg, rgba(255,236,205,0) 0%, rgba(255,236,205,.16) 30%, rgba(255,251,242,.92) 50%, rgba(255,236,205,.16) 70%, rgba(255,236,205,0) 100%); transform: translateX(-130%) skewX(-18deg); }
+  .lx-glint { position: absolute; width: 12%; height: 12%; margin: -6% 0 0 -6%; opacity: 0; filter: drop-shadow(0 0 5px rgba(255,214,150,.95)); pointer-events: none; }
+
+  /* 01 · HERO: "Emergence + Hover & Shine" (one --T loop). The lotus rises through a glowing waterline seen slightly from below
+     (frame 19), settles evenly to front (01) while hovering ~26px above the water, catches one strong light pass + glints and a softer
+     return sheen, drifts on a slow air-current float, then sinks back (01 -> 19) with ripples. No forward nod: every angle change is
+     one long, even ease. The reflection is an exact scaleY(-1) duplicate of the same subtree, so it mirrors everything. */
+  .h-float { position: absolute; inset: 0; animation: hFloat 8s ease-in-out infinite; will-change: transform; }
+  @keyframes hFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 25% { transform: translateY(-5px) rotate(.6deg); } 50% { transform: translateY(-10px) rotate(0deg); } 75% { transform: translateY(-5px) rotate(-.6deg); } }
+  .hx-rise { animation: hxRise var(--T, 18s) infinite; will-change: transform; }
+  .hx-tilt { position: absolute; inset: 0; animation: hxTilt var(--T, 18s) ease-in-out infinite; will-change: transform; }
+  .hx-f01 { animation: hxF01 var(--T, 18s) linear infinite; }
+  .hx-f19 { opacity: 0; animation: hxF19 var(--T, 18s) ease-in-out infinite; }
+
+  .hx-band { animation: hxBand var(--T, 18s) cubic-bezier(.45,0,.35,1) infinite; }
+  .hx-band2 { opacity: .55; animation: hxBand2 var(--T, 18s) cubic-bezier(.45,0,.35,1) infinite; }
+  .hx-g1 { animation: hxG1 var(--T, 18s) ease-out infinite; }
+  .hx-g2 { animation: hxG2 var(--T, 18s) ease-out infinite; }
+  .hx-g3 { animation: hxG3 var(--T, 18s) ease-out infinite; }
+  .hx-line { opacity: .6; animation: hxLine var(--T, 18s) ease-in-out infinite; }
+  .hx-refl { transform: scaleY(-1); opacity: .28; }
+  .nsc-offscreen { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+  .hx-rip { position: absolute; left: 280px; top: 328px; width: 460px; height: 46px; box-sizing: border-box; border: 1px solid rgba(243,170,90,.6); border-radius: 50%; opacity: 0; transform: translate(-50%,-50%) scale(.12); pointer-events: none; }
+  .hx-r1 { animation: hxRip1 var(--T, 18s) ease-out infinite; }
+  .hx-r2 { animation: hxRip2 var(--T, 18s) ease-out infinite; }
+  @keyframes hxRise { 0%, 4% { transform: translateY(100%); animation-timing-function: cubic-bezier(.16,1,.3,1); } 22%, 80% { transform: translateY(0); animation-timing-function: cubic-bezier(.55,0,.75,.2); } 94%, 100% { transform: translateY(100%); } }
+  @keyframes hxTilt { 0%, 10% { transform: perspective(1100px) rotateX(-4deg); } 34%, 82% { transform: perspective(1100px) rotateX(0deg); } 94%, 100% { transform: perspective(1100px) rotateX(-4deg); } }
+  @keyframes hxF19 { 0%, 22% { opacity: 1; } 32%, 82% { opacity: 0; } 90%, 100% { opacity: 1; } }
+  @keyframes hxF01 { 0%, 21.5% { opacity: 0; } 22%, 90.5% { opacity: 1; } 91%, 100% { opacity: 0; } }
+
+  @keyframes hxBand { 0%, 32% { transform: translateX(-130%) skewX(-18deg); } 42%, 100% { transform: translateX(260%) skewX(-18deg); } }
+  @keyframes hxBand2 { 0%, 68% { transform: translateX(260%) skewX(-18deg); } 78%, 100% { transform: translateX(-130%) skewX(-18deg); } }
+  @keyframes hxG1 { 0%, 34.6% { opacity: 0; transform: scale(.2) rotate(0deg); } 35.7% { opacity: 1; transform: scale(1) rotate(45deg); } 37.4%, 100% { opacity: 0; transform: scale(.3) rotate(90deg); } }
+  @keyframes hxG2 { 0%, 35.7% { opacity: 0; transform: scale(.2) rotate(0deg); } 36.8% { opacity: 1; transform: scale(1.15) rotate(45deg); } 38.5%, 100% { opacity: 0; transform: scale(.3) rotate(90deg); } }
+  @keyframes hxG3 { 0%, 37.1% { opacity: 0; transform: scale(.2) rotate(0deg); } 38.2% { opacity: 1; transform: scale(1) rotate(45deg); } 39.9%, 100% { opacity: 0; transform: scale(.3) rotate(90deg); } }
+  @keyframes hxLine { 0% { opacity: .35; } 6% { opacity: 1; } 20%, 82% { opacity: .6; } 87% { opacity: .95; } 100% { opacity: .35; } }
+  @keyframes hxRip1 { 0%, 4.8% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } 5.5% { opacity: .9; } 20% { opacity: 0; transform: translate(-50%,-50%) scale(1); } 20.1%, 84% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } 84.6% { opacity: .75; } 97% { opacity: 0; transform: translate(-50%,-50%) scale(1); } 97.1%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } }
+  @keyframes hxRip2 { 0%, 7.3% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } 8% { opacity: .7; } 22.5% { opacity: 0; transform: translate(-50%,-50%) scale(1); } 22.6%, 86.6% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } 87.2% { opacity: .55; } 99.4% { opacity: 0; transform: translate(-50%,-50%) scale(1); } 99.5%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(.12); } }
+  .hx-frame { position: relative; border-radius: 28px; }
+  .hx-frame::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none; z-index: 2;
+    background: linear-gradient(150deg, rgba(243,150,31,.95), rgba(243,150,31,.18) 42%, rgba(243,150,31,.18) 64%, rgba(243,150,31,.7));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+
+  /* 02 · Studio light: the key light orbits, the mark (frame 11, the glossiest front render) holds still; its cast shadow answers. */
+  .s-light { position: absolute; inset: 0; overflow: hidden; mix-blend-mode: overlay; pointer-events: none; }
+  .s-spot { position: absolute; left: -50%; top: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,.55) 12%, rgba(255,255,255,0) 28%, rgba(60,20,0,.5) 60%); transform: translate(-22%,-16%); animation: sOrbit 10s ease-in-out infinite; }
+  .s-shadow { filter: brightness(0) blur(9px); opacity: .34; transform: translate(10%,11%); animation: sShadow 10s ease-in-out infinite; }
+  @keyframes sOrbit { 0%, 100% { transform: translate(-22%,-16%); } 33% { transform: translate(22%,-10%); } 66% { transform: translate(6%,18%); } }
+  @keyframes sShadow { 0%, 100% { transform: translate(10%,11%); } 33% { transform: translate(-10%,10%); } 66% { transform: translate(-3%,4%); } }
+
+  /* 03 · Angle cuts: a camera-crane move in three cuts, low (19) -> level (01) -> high (18), wiped by a travelling light bar that shares the clip-path easing. Yaw renders (06/07 etc.) were dropped: their thick side extrusion reads as a doubled logo at card size. */
+  .a-all { position: absolute; inset: 0; animation: aBreath 9s ease-in-out infinite; }
+  .a-w { position: absolute; inset: 0; clip-path: inset(0 100% 0 0); background: radial-gradient(100% 80% at 50% 35%, #1D1915, #0E0D10 75%); } /* opaque plate: each shot fully replaces the one below (transparent PNGs otherwise stack) */
+  .a-shot { position: absolute; left: 50%; top: 16%; height: 68%; width: auto; aspect-ratio: 1; transform: translateX(-50%); object-fit: contain; display: block; }
+  .a-w1 { animation: aW1 9s cubic-bezier(.7,0,.3,1) infinite; }
+  .a-w2 { animation: aW2 9s cubic-bezier(.7,0,.3,1) infinite; }
+  .a-w3 { animation: aW3 9s cubic-bezier(.7,0,.3,1) infinite; }
+  .a-bar { position: absolute; inset: 0; opacity: 0; mix-blend-mode: screen; pointer-events: none; animation: aBar 9s cubic-bezier(.7,0,.3,1) infinite; }
+  .a-bar::after { content: ""; position: absolute; top: 0; bottom: 0; left: -34px; width: 68px; background: linear-gradient(90deg, rgba(255,170,80,0), rgba(255,180,100,.24) 38%, rgba(255,248,235,.95) 50%, rgba(255,180,100,.24) 62%, rgba(255,170,80,0)); }
+  @keyframes aBreath { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+  @keyframes aW1 { 0%, 30% { clip-path: inset(0 100% 0 0); } 35%, 100% { clip-path: inset(0 0 0 0); } }
+  @keyframes aW2 { 0%, 63% { clip-path: inset(0 100% 0 0); } 68%, 100% { clip-path: inset(0 0 0 0); } }
+  @keyframes aW3 { 0%, 95% { clip-path: inset(0 100% 0 0); } 100% { clip-path: inset(0 0 0 0); } }
+  @keyframes aBar { 0% { transform: translateX(100%); opacity: 0; } 29.9% { transform: translateX(0); opacity: 0; } 30% { transform: translateX(0); opacity: 1; } 35% { transform: translateX(100%); opacity: 1; } 35.1% { transform: translateX(100%); opacity: 0; } 62.9% { transform: translateX(0); opacity: 0; } 63% { transform: translateX(0); opacity: 1; } 68% { transform: translateX(100%); opacity: 1; } 68.1% { transform: translateX(100%); opacity: 0; } 94.9% { transform: translateX(0); opacity: 0; } 95% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(100%); opacity: 1; } }
+
+  /* 04 · Macro glide: a 2.5x close-up camera settles on each petal while a slow sheen crosses the gloss. */
+  .m-cam { position: absolute; left: 50%; top: 50%; height: 200%; width: auto; aspect-ratio: 1; transform: translate(-50%,-22%); animation: mCam 18s ease-in-out infinite; will-change: transform; }
+  .m-sheen .lx-band { animation: mBand 6s cubic-bezier(.45,0,.35,1) infinite; }
+  @keyframes mCam { 0%, 100% { transform: translate(-50%,-22%); } 18% { transform: translate(-70%,-36%); } 34% { transform: translate(-84%,-52%); } 52% { transform: translate(-50%,-72%); } 70% { transform: translate(-16%,-52%); } 86% { transform: translate(-30%,-36%); } }
+  @keyframes mBand { 0%, 40% { transform: translateX(-130%) skewX(-18deg); } 80%, 100% { transform: translateX(260%) skewX(-18deg); } }
+
+  /* 05 · Emergence: the low-angle render (19) rises through a still waterline with a mirrored reflection and ripples, catches the light, fades. */
+  .e-rise { animation: eRise 10s ease-in-out infinite; }
+  .e-sink { animation: eSink 10s ease-in-out infinite; }
+  .e-sheen .lx-band { animation: eBand 10s cubic-bezier(.45,0,.35,1) infinite; }
+  .e-g { animation: eG 10s ease-out infinite; }
+  .e-ripple { position: absolute; left: 50%; top: 66%; width: 74%; height: 10%; box-sizing: border-box; border: 1px solid rgba(243,170,90,.55); border-radius: 50%; opacity: 0; transform: translate(-50%,-50%) scale(.15); animation: eRipple 10s ease-out infinite; pointer-events: none; }
+  .e-ripple.e-r2 { animation-delay: .7s; }
+  @keyframes eRise { 0%, 8% { transform: translateY(108%); opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1); } 40%, 70% { transform: translateY(0); opacity: 1; } 86% { transform: translateY(0); opacity: 0; } 86.1%, 100% { transform: translateY(108%); opacity: 0; } }
+  @keyframes eSink { 0%, 8% { transform: translateY(-108%); opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1); } 40%, 70% { transform: translateY(0); opacity: 1; } 86% { transform: translateY(0); opacity: 0; } 86.1%, 100% { transform: translateY(-108%); opacity: 0; } }
+  @keyframes eRipple { 0%, 9% { opacity: 0; transform: translate(-50%,-50%) scale(.15); } 11% { opacity: .9; } 32%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(1); } }
+  @keyframes eBand { 0%, 44% { transform: translateX(-130%) skewX(-18deg); } 58%, 100% { transform: translateX(260%) skewX(-18deg); } }
+  @keyframes eG { 0%, 49% { opacity: 0; transform: scale(.2) rotate(0deg); } 51.5% { opacity: 1; transform: scale(1.1) rotate(45deg); } 55%, 100% { opacity: 0; transform: scale(.3) rotate(90deg); } }
+
+  /* Hero, wide screens: the art frame hugs the scene and matches the copy's height; any spare width goes to the copy.
+     Between 1101-1279px the scene is zoomed to .82 so the copy keeps a readable measure. Below 1101px: stacked. */
+  @media (min-width: 1101px) {
+    .nsc-hero { padding-top: 48px !important; padding-bottom: 48px !important; flex-wrap: wrap; align-content: center; align-items: stretch !important; justify-content: space-between; gap: 40px !important; padding-left: max(64px, calc((100% - 1312px) / 2)) !important; padding-right: max(64px, calc((100% - 1312px) / 2)) !important; }
+    .nsc-hero-copy { flex: 1 1 0; min-width: 0; max-width: 680px !important; }
+    .nsc-hero h1 { font-size: clamp(46px, 4vw, 58px) !important; }
+    .nsc-hero-copy p { max-width: 560px !important; }
+    .nsc-hero-art { flex: 0 0 auto !important; align-items: stretch !important; min-height: 0 !important; }
+    .nsc-hero-art .hx-frame { display: flex; align-items: center; justify-content: center; padding: 0 20px; }
+  }
+  @media (min-width: 1101px) and (max-width: 1279px) { .nsc-hero .hx-scene { zoom: .82; } }
+  /* Big, tall screens: scale the copy and the lotus up (and widen the row) so the full-screen hero is filled
+     instead of leaving wide empty bands above and below. Extra bottom padding sits the content slightly high. */
+  @media (min-width: 1380px) and (min-height: 860px) {
+    .nsc-hero { padding-bottom: 7vh !important; padding-left: max(64px, calc((100% - 1440px) / 2)) !important; padding-right: max(64px, calc((100% - 1440px) / 2)) !important; }
+    .nsc-hero-copy, .nsc-hero-art { zoom: 1.06; }
+    .nsc-hero-art .hx-frame { padding: 0 4px; } /* gives the heading room to stay on three lines */
+  }
+  @media (min-width: 1600px) and (min-height: 860px) { .nsc-hero-copy, .nsc-hero-art { zoom: 1.12; } }
+  @media (min-width: 1660px) and (min-height: 1000px) {
+    .nsc-hero { padding-left: max(64px, calc((100% - 1600px) / 2)) !important; padding-right: max(64px, calc((100% - 1600px) / 2)) !important; }
+    .nsc-hero-copy, .nsc-hero-art { zoom: 1.25; }
+  }
+  @media (min-width: 1820px) and (min-height: 1000px) {
+    .nsc-hero { padding-left: max(64px, calc((100% - 1760px) / 2)) !important; padding-right: max(64px, calc((100% - 1760px) / 2)) !important; }
+    .nsc-hero-copy, .nsc-hero-art { zoom: 1.4; }
+  }
+  @media (min-width: 2400px) and (min-height: 1300px) {
+    .nsc-hero { padding-left: max(64px, calc((100% - 2440px) / 2)) !important; padding-right: max(64px, calc((100% - 2440px) / 2)) !important; }
+    .nsc-hero-copy, .nsc-hero-art { zoom: 1.75; }
+  }
+  .nsc-hero { box-sizing: border-box; min-height: calc(100vh - var(--navh, 80px)); min-height: calc(100svh - var(--navh, 80px)); }
+  @media (max-width: 1100px) {
+    .nsc-hero { flex-direction: column !important; align-items: stretch !important; justify-content: center; gap: 32px !important; padding-bottom: 40px !important; }
+    .nsc-hero-copy { max-width: 720px !important; }
+    /* Stacked: the art box hugs the lotus frame (its 500px desktop minimum left empty bands above and below). */
+    .nsc-hero-art { min-height: 0 !important; flex: 0 0 auto !important; }
+    /* ...and the hero is as tall as its content, not a full screen, so tablets don't get spare bands either. */
+    .nsc-hero { min-height: 0 !important; }
+  }
+  /* Nav: brand links home; below 901px the links fold into a menu panel. */
+  .nsc-brand:focus-visible, .nsc-burger:focus-visible { outline: 2px solid #F3961F; outline-offset: 4px; border-radius: 8px; }
+  .nsc-burger { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.18); border-radius: 12px; background: transparent; color: #F5F1E9; cursor: pointer; place-items: center; }
+  .nsc-burger svg path { transition: transform .2s ease, opacity .2s ease; transform-origin: 12px 12px; }
+  .nsc-nav.open .nsc-burger .b1 { transform: translateY(5px) rotate(45deg); }
+  .nsc-nav.open .nsc-burger .b2 { opacity: 0; }
+  .nsc-nav.open .nsc-burger .b3 { transform: translateY(-5px) rotate(-45deg); }
+  .nsc-menu-cta { display: none; }
+  @media (max-width: 900px) {
+    .nsc-burger { display: grid; }
+    .nsc-nav.open .nsc-nav-links { display: flex !important; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch !important; gap: 0 !important; padding: 8px 16px 16px; background: #0B0B0C; box-shadow: 0 24px 40px rgba(0,0,0,.55); border-bottom: 1px solid rgba(255,255,255,.08); font-size: 18px !important; }
+    .nsc-nav-links a { padding: 14px 8px; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nsc-nav-links a:hover { color: #F3961F; }
+  }
+  @media (max-width: 520px) {
+    .nsc-nav-cta { display: none; }
+    .nsc-menu-cta { display: block; margin-top: 12px; text-align: center; border: 0 !important; background: #F3961F; color: #17130A; font-weight: 600; border-radius: 999px; }
+    .nsc-brand span { font-size: 20px !important; }
+    .nsc-brand img { width: 38px !important; height: 38px !important; }
+  }
+  @media (prefers-reduced-motion: reduce) { .lx-anim, .lx-anim * { animation: none !important; } }
+  /* A scene scrolled out of view pauses as one unit, so its pieces stay in step when it resumes. */
+  .lx-anim.lx-off, .lx-anim.lx-off *, .lx-anim.lx-off *::before, .lx-anim.lx-off *::after { animation-play-state: paused !important; }
+  /* Hero reading highlight: up to three words lit at a time, moving at reading pace, as a warm gold glow.
+     Words on the orange line go a touch more yellow so they still stand out. */
+  .rw { transition: color .35s ease, text-shadow .35s ease; }
+  .rw.lit { color: #FFD27A; text-shadow: 0 0 .5em rgba(255,190,90,.7), 0 0 .15em rgba(255,215,140,.55); }
+  .rw.rw-alt.lit { color: #FFE38F; }
+  @media (max-width: 900px) {
+    .nsc-grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+    .nsc-nav-links { display: none !important; }
+  }
+
+
+:root { color-scheme: dark; }
+body { background: #0B0B0C; color: #F5F1E9; }
+a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius: 999px; }
+@media (max-width: 700px) {
+  body [style*="64px"] { padding-left: 16px !important; padding-right: 16px !important; }
+  h1 { font-size: 38px !important; }
+  .nsc-grid-4 { grid-template-columns: 1fr !important; }
+  .hx-frame { zoom: .64; } /* 560px scene → fills a phone's content width */
+}
+@media (max-width: 389px) { .hx-frame { zoom: .58; } } /* small phones (360px): 560 × .58 fits in 328px */
+  /* ===== In the field: one-row carousel ===== */
+  [hidden] { display: none !important; }
+  .fx { padding: 96px 64px; }
+  .fx-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; max-width: 1200px; margin: 0 auto 28px; }
+  .fx-sub { font-size: 17px; color: #AFBDB2; margin: 12px 0 0; max-width: 52ch; }
+  .fx-nav { display: flex; gap: 10px; flex-shrink: 0; }
+  .fx-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.16); background: transparent; color: #F5F1E9; display: grid; place-items: center; cursor: pointer; transition: border-color .15s, background .15s, opacity .15s; }
+  .fx-btn:hover:not(:disabled) { border-color: #F3961F; background: rgba(243,150,31,.1); }
+  .fx-btn:disabled { opacity: .3; cursor: default; }
+  .fx-btn:focus-visible, .fx-track:focus-visible, .ct input:focus-visible, .ct textarea:focus-visible, .ct a:focus-visible, .ct-submit:focus-visible, .ct-copy:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; }
+  .fx-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 60px) / 4); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 4px 0 8px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .fx-track::-webkit-scrollbar { display: none; }
+  .fx-card { scroll-snap-align: start; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #141318; }
+  .fx-vis { position: relative; }
+  .fx-status { position: absolute; top: 12px; left: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(11,11,12,.8); border: 1px solid rgba(255,255,255,.1); }
+  .fx-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .fx-live { color: #6FCF97; } .fx-wip { color: #F3961F; } .fx-soon { color: #8EC5FF; }
+  .fx-body { padding: 18px 20px 22px; }
+  .fx-body h3 { font-size: 18px; font-weight: 600; margin: 0 0 6px; color: #F5F1E9; }
+  .fx-body p { font-size: 16px; line-height: 1.55; color: #AFBDB2; margin: 0; }
+  @media (max-width: 1100px) { .fx-track { grid-auto-columns: calc((100% - 40px) / 3); } }
+  @media (max-width: 800px) { .fx-track { grid-auto-columns: 46%; } }
+  @media (max-width: 560px) { .fx-track { grid-auto-columns: 84%; } }
+
+  /* ===== Contact (template) ===== */
+  .ct { position: relative; padding: 110px 64px 40px; }
+  .ct-glow { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 620px; max-width: 100%; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(243,150,31,.12), transparent 70%); pointer-events: none; }
+  .ct-head { position: relative; text-align: center; max-width: 620px; margin: 0 auto 32px; }
+  .ct-head p { font-size: 17px; line-height: 1.6; color: #AFBDB2; margin: 16px 0 0; }
+  .ct-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; align-items: start; } /* each card is as tall as its content */
+  .ct-card { background: #141318; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 28px; }
+  .ct-form { display: grid; gap: 16px; align-content: start; }
+  .ct-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .ct-field { display: grid; gap: 6px; }
+  .ct-field label { font-size: 14px; font-weight: 600; color: #C9C3B8; }
+  .ct-field label span { font-weight: 400; color: #A3B1A6; }
+  .ct input, .ct textarea { font: inherit; font-size: 17px; color: #F5F1E9; background: #0E0D10; border: 1px solid rgba(255,255,255,.36); border-radius: 12px; padding: 12px 14px; resize: vertical; transition: border-color .15s; }
+  .ct input:focus, .ct textarea:focus { border-color: #F3961F; }
+  .ct input::placeholder, .ct textarea::placeholder { color: #8A978D; opacity: 1; } /* same readable grey for every field (4.5:1+) */
+  .ct-submit { justify-self: start; border: 0; cursor: pointer; font: inherit; background: #F3961F; color: #17130A; font-weight: 600; font-size: 17px; padding: 14px 28px; border-radius: 999px; }
+  .ct-note { margin: 0; font-size: 16px; color: #6FCF97; }
+  .ct-err { font-size: 14px; color: #FF9B8A; }
+  .ct input[aria-invalid="true"], .ct textarea[aria-invalid="true"] { border-color: #FF9B8A !important; }
+  .ct-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+  .ct-actions .ct-submit { justify-self: auto; }
+  .ct-copy { font: inherit; font-size: 16px; font-weight: 600; color: #F3961F; background: none; border: 0; padding: 8px 0; cursor: pointer; }
+  .ct-copy:hover { text-decoration: underline; }
+  .ct-plan { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(243,150,31,.35); background: rgba(243,150,31,.08); font-size: 15px; color: #C9C3B8; }
+  .ct-plan b { color: #F5F1E9; }
+  .ct-plan a { margin-left: auto; font-weight: 600; color: #F3961F; }
+  .ct-mail { color: #F5F1E9; border-bottom: 1px solid rgba(243,150,31,.5); }
+  .ct-mail:hover { color: #F3961F; }
+  #ct-msg.ct-filled { font-size: 15px; line-height: 1.55; min-height: 300px; }
+  .ct-h { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; line-height: 1.25; color: #FBF8F2; margin: 0; }
+  .ct-formhead p { margin: 6px 0 4px; font-size: 15px; line-height: 1.55; color: #A3B1A6; }
+  .ct-hint { font-size: 13px; color: #8A978D; }
+  .ct-sendnote { margin: -6px 0 0; font-size: 14px; }
+  .ct-sendnote a { color: #AFBDB2; text-decoration: underline; }
+  .ct-privacy { margin: -6px 0 0; font-size: 14px; color: #A3B1A6; }
+  .ct-privacy a, .ct-plink { color: #AFBDB2; text-decoration: underline; }
+  .ct-privacy a:hover, .ct-plink:hover { color: #F3961F; }
+  .ct-plink { margin-left: 14px; font-size: 14px; }
+  .ct-plink-act { margin-left: 0; }
+  .ct-note.ct-bad { color: #FF9B8A; }
+  .ct-copybox { width: 100%; font: inherit; font-size: 14px; line-height: 1.5; color: #DCD6CB; background: rgba(0,0,0,.28); border: 1px solid rgba(243,150,31,.5); border-radius: 12px; padding: 12px; resize: vertical; }
+  .ct-note a, .ct-note button { font: inherit; color: #F3961F; font-weight: 600; text-decoration: underline; background: none; border: 0; padding: 0; cursor: pointer; }
+  .ct-submit[disabled] { opacity: .6; cursor: progress; }
+  /* Spam trap: off-screen for people, still in the form for bots */
+  .ct-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .ct-side { display: grid; gap: 20px; align-content: start; }
+  .ct .ct-next { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(243,150,31,.13), rgba(243,150,31,.02) 60%), var(--g-card) !important; border-color: rgba(243,150,31,.28) !important; }
+  .ct-next ol { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 16px; }
+  .ct-next li { display: grid; grid-template-columns: 32px 1fr; gap: 14px; align-items: start; font-size: 15px; line-height: 1.5; color: #AFBDB2; }
+  .ct-next li > span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #F3961F; color: #17130A; font-weight: 600; font-size: 15px; }
+  .ct-next li b { display: block; font-size: 16px; font-weight: 600; color: #F5F1E9; margin-bottom: 2px; }
+  .ct-info { display: grid; gap: 18px; align-content: start; }
+  .ct-info ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .ct-info li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; font-size: 16px; line-height: 1.55; color: #DCD6CB; }
+  .ct-info li b { display: block; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #A3B1A6; margin-bottom: 3px; }
+  .ct-info li > div { min-width: 0; overflow-wrap: anywhere; }
+  .ct-ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #F3961F; background: rgba(243,150,31,.1); border: 1px solid rgba(243,150,31,.22); }
+  .ct-map { aspect-ratio: 16 / 7; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #0E0D10; }
+  .ct-map.ct-map-focus { outline: 2px solid #F3961F; outline-offset: 3px; } /* keyboard focus inside the map (set by script) */
+  .ct-map iframe { width: 100%; height: 100%; border: 0; display: block; filter: invert(.9) hue-rotate(180deg) saturate(.65) contrast(.92); }
+  .ct-maplink { font-size: 16px; font-weight: 600; color: #F3961F; }
+  .ct-maphead { margin: 0 0 -10px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #A3B1A6; }
+  .ct-foot { position: relative; max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 14px; color: #8A978D; }
+  .ct-brand { display: flex; align-items: center; gap: 10px; }
+  .ct-brand img { object-fit: contain; }
+  .ct-social { display: flex; gap: 18px; }
+  .ct-social a:hover { color: #F3961F; }
+  @media (max-width: 900px) { .ct-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .fx, .ct { padding-left: 16px; padding-right: 16px; } .fx-head { flex-wrap: wrap; } }
+  @media (max-width: 560px) { .ct-two { grid-template-columns: 1fr; } .ct-card { padding: 22px; } .ct-br { display: none; } }
+  /* Phones: the Privacy Notice link can't sit beside the button, and the line under it already links it */
+  @media (max-width: 560px) { .ct-plink-act { display: none; } }
+  /* Keep the footer's Privacy link clear of the back-to-top button */
+  @media (max-width: 700px) { .ct-foot { padding-right: 64px; } }
+
+  /* ===== Process: a full-screen "chapter" in deep forest green (menu jump shows the whole page) ===== */
+  .pr { position: relative; overflow: hidden; box-sizing: border-box; min-height: calc(100vh - var(--navh, 80px)); min-height: calc(100svh - var(--navh, 80px)); display: flex; flex-direction: column; justify-content: center; padding: 72px 64px;
+    background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(111,190,140,.16), transparent 70%), radial-gradient(ellipse 50% 45% at 85% 100%, rgba(243,150,31,.08), transparent 70%), linear-gradient(180deg, #0F1F17 0%, #0C1A13 55%, #0A150F 100%);
+    border-top: 1px solid rgba(140,210,165,.12); border-bottom: 1px solid rgba(140,210,165,.12); }
+  .pr > * { position: relative; width: 100%; }
+  .pr .nsc-grid-4 > div { background: rgba(255,255,255,.035); border: 1px solid rgba(160,220,180,.14); border-radius: 18px; padding: 26px 24px 28px; transition: transform .2s ease, border-color .2s ease; }
+  .pr .nsc-grid-4 > div:hover { transform: translateY(-3px); border-color: rgba(243,150,31,.5); }
+  .pr p { color: #AFBDB2 !important; }
+  @media (max-width: 700px) { .pr { padding: 64px 16px; } }
+
+  /* ===== Shared section system: forest-green chapters, one heading block, one card style ===== */
+  :root { --g-base: #0A140F; --g-line: rgba(140,210,165,.12); --g-card: rgba(255,255,255,.035); --g-card-line: rgba(160,220,180,.14); --g-muted: #AFBDB2; }
+  body, #top { background: var(--g-base) !important; }
+  .nsc-nav { background: rgba(10,20,15,.86) !important; border-bottom-color: var(--g-line) !important; }
+  .sec { position: relative; overflow: hidden; box-sizing: border-box; padding: 72px 64px !important; border-top: 1px solid var(--g-line); border-bottom: 0;
+    background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(111,190,140,.14), transparent 70%), radial-gradient(ellipse 50% 45% at 85% 100%, rgba(243,150,31,.06), transparent 70%), linear-gradient(180deg, #0F1F17 0%, #0C1A13 55%, #0A150F 100%) !important; }
+  /* Every section is at least one screen tall (below the nav) with its content centred, so each menu jump shows a
+     full "page" whether the window is maximised or not; taller content simply grows past it. */
+  .sec { min-height: calc(100vh - var(--navh, 80px)); min-height: calc(100svh - var(--navh, 80px)); display: flex; flex-direction: column; justify-content: center; }
+  .sec:not(.st) > :not(.st-glow):not(.ct-glow) { width: 100%; box-sizing: border-box; }
+  .sec.st { align-items: center; }
+  .sec.pr { padding-top: 72px !important; padding-bottom: 72px !important; }
+  .sec.ct { padding-bottom: 40px !important; }
+  .sec-head { position: relative; text-align: center; max-width: 780px; margin: 0 auto 44px; }
+  .sec-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #F3961F; }
+  .sec-head h2, .st-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 40px !important; line-height: 1.15; margin: 12px 0 0; color: #FBF8F2; text-wrap: balance; }
+  .sec-head p, .st-sub { font-size: 17px !important; line-height: 1.6; color: var(--g-muted) !important; margin: 14px auto 0; max-width: 56ch; }
+  .sec-head p { max-width: 100%; text-wrap: wrap; text-wrap: balance; } /* short centred intros use the header's width; wraps split evenly */
+  .st-sub { margin-bottom: 36px !important; }
+  .nsc-card, .fx-card, .ct-card, .pr .nsc-grid-4 > div { background: var(--g-card) !important; border-color: var(--g-card-line) !important; }
+  .ct input, .ct textarea, .ct-map { background: rgba(0,0,0,.28) !important; }
+  .fx-nav { justify-content: center; margin-top: 22px; }
+  @media (max-width: 700px) { .sec { padding: 64px 16px !important; } .sec-head h2, .st-title { font-size: 32px !important; } }
+
+  /* ===== Start a product: primary CTA ===== */
+  .st { position: relative; overflow: hidden; padding: 120px 64px; text-align: center; border-top: 1px solid rgba(255,255,255,.06); background: linear-gradient(180deg, #0B0B0C, #120E0A 55%, #0B0B0C); }
+  .st > *:not(.st-glow) { position: relative; }
+  .st-glow { position: absolute; left: 50%; top: 50%; width: 760px; max-width: 120%; height: 440px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(243,150,31,.17), transparent 70%); pointer-events: none; }
+  .st-mark { display: block; width: 72px; height: 72px; object-fit: contain; margin: 0 auto 20px; filter: drop-shadow(0 10px 24px rgba(243,150,31,.35)); }
+  .st-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 48px; line-height: 1.1; margin: 14px 0 0; color: #FBF8F2; text-wrap: balance; }
+  .st-sub { font-size: 18px; line-height: 1.6; color: #AFBDB2; max-width: 560px; margin: 18px auto 36px; }
+  .st-cta { display: inline-flex; align-items: center; gap: 12px; background: #F3961F; color: #17130A; font-weight: 600; font-size: 19px; padding: 18px 40px; border-radius: 999px; box-shadow: 0 12px 40px rgba(243,150,31,.35), inset 0 1px 0 rgba(255,255,255,.35); }
+  .st-cta svg { transition: transform .2s ease; }
+  .st-cta:hover svg { transform: translateX(4px); }
+  .st-cta:focus-visible { outline: 2px solid #F3961F; outline-offset: 4px; }
+  .st-steps { list-style: none; padding: 0; margin: 40px auto 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px; font-size: 16px; color: #C9C3B8; }
+  .st-steps li { display: flex; align-items: center; gap: 10px; }
+  .st-alt { margin: 28px auto 0; font-size: 16px; color: #AFBDB2; }
+  .st-alt a { color: #F3961F; text-decoration: underline; text-underline-offset: 3px; }
+  .st-alt a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius: 2px; }
+  .st-steps span { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(243,150,31,.5); color: #F3961F; display: grid; place-items: center; font-size: 13px; font-weight: 600; }
+  @media (max-width: 700px) { .st { padding: 88px 16px; } .st-title { font-size: 36px; } }
+
+  .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 30; width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer; background: #F3961F; color: #17130A; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.45); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .2s, transform .2s; }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { transform: translateY(-2px); }
+  .to-top:focus-visible { outline: 2px solid #FBF8F2; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+  /* Skip link: off screen until keyboard focus, then shown top-left above the sticky nav. */
+  .skip { position: absolute; left: 16px; top: -100px; z-index: 100; background: #F3961F; color: #17130A; font-weight: 600; font-size: 16px; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+  .skip:focus { top: 12px; outline: 2px solid #FBF8F2; outline-offset: 3px; }
+  main#main { display: flex; flex-direction: column; flex: 1 0 auto; min-width: 0; }
+  main#main:focus { outline: none; }
+  .sec-head p.fx-note { font-size: 16px !important; margin-top: 10px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="top" style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #0B0B0C; color: #F5F1E9; display: flex; flex-direction: column; overflow-x: clip;">
+
+  <!-- NAV -->
+  <div class="nsc-nav" style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 20px 64px; background: rgba(11,11,12,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <a href="#top" class="nsc-brand" aria-label="Nischaya Creative Soft, back to top" style="display: flex; align-items: center; gap: 12px;">
+      <img src="assets/img/lotus-01-720.webp" alt="" style="width: 46px; height: 46px; object-fit: contain;">
+      <span style="font-family: 'Fraunces', serif; font-size: 25px; font-weight: 600; letter-spacing: 0.2px;">Nischaya Creative Soft</span>
+    </a>
+    <nav id="nsc-menu" class="nsc-nav-links" aria-label="Main" style="display: flex; align-items: center; gap: 36px; font-size: 16px; color: #C9C3B8;">
+      <a href="#capabilities">Services</a>
+      <a href="#work">Products</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="#start" class="nsc-menu-cta">Start a product</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 10px;">
+    <a href="#start" class="nsc-btn nsc-nav-cta" style="background: #F3961F; color: #17130A; font-size: 16px; font-weight: 600; padding: 10px 20px; border-radius: 999px;">Start a product</a>
+    <button class="nsc-burger" type="button" aria-controls="nsc-menu" aria-expanded="false" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="b1" d="M4 7h16"/><path class="b2" d="M4 12h16"/><path class="b3" d="M4 17h16"/></svg></button>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+  <!-- HERO -->
+  <div class="nsc-hero" style="display: flex; align-items: center; gap: 48px; padding: 56px 64px 64px; position: relative;">
+
+    <div class="nsc-hero-copy" style="max-width: 560px; position: relative; z-index: 1;">
+      <div style="font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #F3961F; margin-bottom: 22px;">Product engineering · AI · Cloud &amp; DevOps</div>
+      <h1 style="font-family: 'Fraunces', serif; font-weight: 600; font-size: 58px; line-height: 1.08; letter-spacing: -0.5px; margin: 0 0 26px; color: #FBF8F2;">We build digital products, end to end —<br><span style="color: #F3961F;">from first idea to scale.</span></h1>
+      <p style="font-size: 18px; line-height: 1.65; color: #B9B2A6; margin: 0 0 36px; max-width: 480px;">Strategy, design, full-stack engineering, AI and DevOps under one roof. We take a product from idea to production, then keep it fast, secure and improving.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <a href="#capabilities" class="nsc-btn" style="background: #F3961F; color: #17130A; font-weight: 600; font-size: 17px; padding: 14px 28px; border-radius: 999px;">Explore services</a>
+        <a href="#start" class="nsc-btn" style="border: 1px solid rgba(255,255,255,0.25); color: #F5F1E9; font-weight: 600; font-size: 17px; padding: 14px 28px; border-radius: 999px;">Start a product</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px;">
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">Discovery &amp; UX</span>
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">Full-stack engineering</span>
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">AI &amp; automation</span>
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">Cloud &amp; DevOps</span>
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">Web &amp; mobile</span>
+        <span style="font-size: 13px; color: #C9C3B8; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px;">Support &amp; scale</span>
+      </div>
+    </div>
+
+    <div class="nsc-hero-art" style="flex: 1; display: flex; align-items: center; justify-content: center; position: relative; min-height: 500px;">
+      <div class="hx-frame">
+      <div class="hx-scene lx-anim" style="--T: 18s; position: relative; width: 560px; height: 480px; z-index: 1;">
+
+        <div style="position: absolute; left: 0; right: 0; top: 0; height: 328px; overflow: hidden;">
+          <div class="hx-rise" style="position: absolute; left: 100px; top: -6px; width: 360px; height: 360px;">
+            <div class="h-float">
+              <div class="hx-tilt">
+                <img class="lx-img hx-f01" src="assets/img/lotus-01-720.webp" alt="Nischaya Creative Soft lotus mark">
+                <img class="lx-img hx-f19" src="assets/img/lotus-19.webp" alt=""><div class="lx-sheen lx-m01"><div class="lx-band hx-band"></div><div class="lx-band hx-band2"></div></div>
+                <svg class="lx-glint hx-g1" viewBox="0 0 100 100" style="left: 13.3%; top: 51.7%;" aria-hidden="true"><path d="M50 0 C53 40 60 47 100 50 C60 53 53 60 50 100 C47 60 40 53 0 50 C40 47 47 40 50 0 Z" fill="#FFFFFF"></path><circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle></svg>
+                <svg class="lx-glint hx-g2" viewBox="0 0 100 100" style="left: 50%; top: 15%;" aria-hidden="true"><path d="M50 0 C53 40 60 47 100 50 C60 53 53 60 50 100 C47 60 40 53 0 50 C40 47 47 40 50 0 Z" fill="#FFFFFF"></path><circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle></svg>
+                <svg class="lx-glint hx-g3" viewBox="0 0 100 100" style="left: 85%; top: 51.7%;" aria-hidden="true"><path d="M50 0 C53 40 60 47 100 50 C60 53 53 60 50 100 C47 60 40 53 0 50 C40 47 47 40 50 0 Z" fill="#FFFFFF"></path><circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: absolute; left: 0; right: 0; top: 328px; bottom: 0; overflow: hidden; -webkit-mask-image: linear-gradient(#000, rgba(0,0,0,0.45) 40%, transparent 88%); mask-image: linear-gradient(#000, rgba(0,0,0,0.45) 40%, transparent 88%);">
+          <div class="hx-refl" style="position: absolute; left: 100px; top: -26px; width: 360px; height: 360px;">
+            <div class="hx-rise" style="position: absolute; inset: 0;">
+              <div class="h-float">
+                <div class="hx-tilt">
+                  <img class="lx-img hx-f01" src="assets/img/lotus-01-720.webp" alt="">
+                  <img class="lx-img hx-f19" src="assets/img/lotus-19.webp" alt=""><div class="lx-sheen lx-m01"><div class="lx-band hx-band"></div><div class="lx-band hx-band2"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hx-line" style="position: absolute; left: 20px; right: 20px; top: 328px; height: 1px; background: linear-gradient(90deg, transparent, rgba(243,170,90,0.7) 30%, rgba(255,214,160,0.95) 50%, rgba(243,170,90,0.7) 70%, transparent);"></div>
+        <div class="hx-rip hx-r1"></div>
+        <div class="hx-rip hx-r2"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div id="capabilities" class="sec">
+    <div class="sec-head">
+      <div class="sec-eyebrow">What we do</div>
+      <h2>End-to-end product development</h2>
+    </div>
+    <div class="nsc-grid-4" style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"></path><path d="m3 12.5 9 5 9-5"></path><path d="m3 17 9 5 9-5"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">End-to-end product development</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">From the first sketch to production: one accountable team for discovery, design, engineering and launch.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8Z"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">AI &amp; intelligent automation</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">LLM features, AI agents and document &amp; data workflows built into your product: useful, measured and safe.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.1 4.5 4.5 0 0 0 7 18Z"></path><path d="m9.8 13.6 2 2 3.6-4"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Cloud &amp; DevOps</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">CI/CD pipelines, infrastructure as code, monitoring and cost-aware cloud. Releases become routine, not events.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Product strategy &amp; UX</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">Discovery workshops, user flows and interface design, tested with real users before we build.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="11" rx="2"></rect><rect x="15" y="9" width="7" height="12" rx="1.5"></rect><path d="M6 19h6"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Web &amp; mobile applications</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">Customer apps, portals and websites that are fast on any device, including booking, commerce and quoting flows.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M7.6 8.2 10.6 16M16.4 8.2 13.4 16M8.5 6h7"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Data, APIs &amp; integrations</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">Payments, CRMs, ERPs, messaging and analytics, connected cleanly so your data works for you.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6Z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Quality, security &amp; performance</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">Automated testing, secure-by-default architecture and performance budgets, built in from day one.</p>
+      </div>
+
+      <div class="nsc-card" style="background: #17161B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px 22px 24px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3961F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"></path><path d="M15 8h5v5"></path></svg>
+        <h3 style="font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #F5F1E9;">Support &amp; scale</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #AFBDB2; margin: 0;">We stay after launch: monitoring, iteration and growth, so the product keeps getting better.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WORK: one-row product carousel (scroll-snap; arrows appear only when there is more to scroll) -->
+  <section id="work" class="sec fx" aria-labelledby="work-title">
+    <div class="sec-head">
+      <div class="sec-eyebrow">In the field</div>
+      <h2 id="work-title">Products we're building and running</h2>
+      <p>Real products across different industries, some live, others on the way.</p>
+      <p class="fx-note">Selected confidential work. Client names and product screens are kept private.</p>
+    </div>
+    <div class="fx-track" id="fx-track" tabindex="0" role="region" aria-label="Products, scroll sideways for more">
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(120% 90% at 50% 18%, #8C8984, #5F5C58 58%, #3E3C39);">
+          <div style="position: absolute; left: 21%; top: 19%; width: 58%; height: 58%;">
+            <img loading="lazy" decoding="async" class="lx-img s-shadow" src="assets/img/lotus-11.webp" alt="">
+            <img class="lx-img" src="assets/img/lotus-11.webp" alt="Lotus mark under a moving studio light">
+            <div class="s-light lx-m11"><div class="s-spot"></div></div>
+          </div>
+        </div>
+          <span class="fx-status fx-live">Live</span>
+        </div>
+        <div class="fx-body">
+          <h3>Commerce platform</h3>
+          <p>Catalogue, storefront and order flow for a natural-products brand.</p>
+        </div>
+      </article>
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; container-type: size; background: linear-gradient(180deg, #16120F 0%, #0F0D0C 66%, #0A0B0D 66%, #060709 100%);">
+          <div style="position: absolute; left: 0; right: 0; top: 0; height: 66%; overflow: hidden;">
+            <div class="e-rise" style="position: absolute; left: calc(50% - 29cqh); width: 58cqh; height: 58cqh; bottom: 2%;">
+              <img class="lx-img" src="assets/img/lotus-19.webp" alt="Lotus mark rising from still water">
+              <div class="lx-sheen lx-m19 e-sheen"><div class="lx-band"></div></div>
+              <svg class="lx-glint e-g" viewBox="0 0 100 100" style="left: 50%; top: 15%;" aria-hidden="true"><path d="M50 0 C53 40 60 47 100 50 C60 53 53 60 50 100 C47 60 40 53 0 50 C40 47 47 40 50 0 Z" fill="#FFFFFF"></path><circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle></svg>
+            </div>
+          </div>
+          <div style="position: absolute; left: 0; right: 0; top: 66%; bottom: 0; overflow: hidden; -webkit-mask-image: linear-gradient(#000, transparent 85%); mask-image: linear-gradient(#000, transparent 85%);">
+            <div class="e-sink" style="position: absolute; left: calc(50% - 29cqh); width: 58cqh; height: 58cqh; top: 1.4cqh;">
+              <img class="lx-img" src="assets/img/lotus-19.webp" alt="" style="transform: scaleY(-1); filter: blur(1px); opacity: 0.32;">
+            </div>
+          </div>
+          <div style="position: absolute; left: 8%; right: 8%; top: 66%; height: 1px; background: linear-gradient(90deg, transparent, rgba(243,170,90,0.5), transparent);"></div>
+          <div class="e-ripple"></div>
+          <div class="e-ripple e-r2"></div>
+        </div>
+          <span class="fx-status fx-wip">In progress</span>
+        </div>
+        <div class="fx-body">
+          <h3>Healthcare operations</h3>
+          <p>OPD token queue, video consults and front-desk workflows for a clinic.</p>
+        </div>
+      </article>
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(90% 90% at 50% 50%, #2A1A0C, #0E0B09 80%);">
+          <div class="m-cam">
+            <img loading="lazy" decoding="async" class="lx-img" src="assets/img/lotus-01.webp" alt="Slow close-up glide across the lotus surface">
+            <div class="lx-sheen lx-m01 m-sheen"><div class="lx-band"></div></div>
+          </div>
+          <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 42%, rgba(8,7,9,0.8) 100%); pointer-events: none;"></div>
+        </div>
+          <span class="fx-status fx-live">Live</span>
+        </div>
+        <div class="fx-body">
+          <h3>Creator storefront</h3>
+          <p>Portfolio and sales platform for an independent artist.</p>
+        </div>
+      </article>
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; container-type: size; background: linear-gradient(180deg, #16120F 0%, #0F0D0C 66%, #0A0B0D 66%, #060709 100%);">
+          <div style="position: absolute; left: 0; right: 0; top: 0; height: 66%; overflow: hidden;">
+            <div class="e-rise" style="position: absolute; left: calc(50% - 29cqh); width: 58cqh; height: 58cqh; bottom: 2%;">
+              <img class="lx-img" src="assets/img/lotus-19.webp" alt="">
+              <div class="lx-sheen lx-m19 e-sheen"><div class="lx-band"></div></div>
+              <svg class="lx-glint e-g" viewBox="0 0 100 100" style="left: 50%; top: 15%;" aria-hidden="true"><path d="M50 0 C53 40 60 47 100 50 C60 53 53 60 50 100 C47 60 40 53 0 50 C40 47 47 40 50 0 Z" fill="#FFFFFF"></path><circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle></svg>
+            </div>
+          </div>
+          <div style="position: absolute; left: 0; right: 0; top: 66%; bottom: 0; overflow: hidden; -webkit-mask-image: linear-gradient(#000, transparent 85%); mask-image: linear-gradient(#000, transparent 85%);">
+            <div class="e-sink" style="position: absolute; left: calc(50% - 29cqh); width: 58cqh; height: 58cqh; top: 1.4cqh;">
+              <img class="lx-img" src="assets/img/lotus-19.webp" alt="" style="transform: scaleY(-1); filter: blur(1px); opacity: 0.32;">
+            </div>
+          </div>
+          <div style="position: absolute; left: 8%; right: 8%; top: 66%; height: 1px; background: linear-gradient(90deg, transparent, rgba(243,170,90,0.5), transparent);"></div>
+          <div class="e-ripple"></div>
+          <div class="e-ripple e-r2"></div>
+        </div>
+          <span class="fx-status fx-soon">Launching soon</span>
+        </div>
+        <div class="fx-body">
+          <h3>Coaching academy</h3>
+          <p>Profile, five-level syllabus, achievements and trial-class booking for a chess academy.</p>
+        </div>
+      </article>
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(100% 80% at 50% 35%, #1D1915, #0E0D10 75%);">
+          <div class="a-all">
+            <div class="a-w" style="clip-path: none;"><img class="a-shot" src="assets/img/lotus-19.webp" alt="Lotus mark cut between low, level and high camera angles"></div>
+            <div class="a-w a-w1"><img class="a-shot" src="assets/img/lotus-01-720.webp" alt=""></div>
+            <div class="a-w a-w2"><img class="a-shot" src="assets/img/lotus-18.webp" alt=""></div>
+            <div class="a-w a-w3"><img class="a-shot" src="assets/img/lotus-19.webp" alt=""></div>
+            <div class="a-bar"></div>
+          </div>
+        </div>
+          <span class="fx-status fx-wip">In progress</span>
+        </div>
+        <div class="fx-body">
+          <h3>Manufacturing tools</h3>
+          <p>Product visualiser and quoting for a screen-printing workshop.</p>
+        </div>
+      </article>
+      <article class="fx-card nsc-card">
+        <div class="fx-vis">
+          <div class="lx-anim" style="position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(120% 90% at 50% 18%, #8C8984, #5F5C58 58%, #3E3C39);">
+          <div style="position: absolute; left: 21%; top: 19%; width: 58%; height: 58%;">
+            <img loading="lazy" decoding="async" class="lx-img s-shadow" src="assets/img/lotus-11.webp" alt="">
+            <img class="lx-img" src="assets/img/lotus-11.webp" alt="">
+            <div class="s-light lx-m11"><div class="s-spot"></div></div>
+          </div>
+        </div>
+          <span class="fx-status fx-wip">In progress</span>
+        </div>
+        <div class="fx-body">
+          <h3>Interior estimating platform</h3>
+          <p>Material estimates, custom layouts and approvals for interior designers and homeowners.</p>
+        </div>
+      </article>
+    </div>
+    <div class="fx-nav" hidden>
+        <button type="button" class="fx-btn" data-dir="-1" aria-label="Previous products" aria-controls="fx-track"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+        <button type="button" class="fx-btn" data-dir="1" aria-label="Next products" aria-controls="fx-track"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+      </div>
+  </section>
+
+  <!-- PROCESS -->
+  <div id="process" class="sec pr">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Process</div>
+      <h2>From idea to scale</h2>
+    </div>
+    <div class="nsc-grid-4" style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+      <div>
+        <div style="font-family: 'Fraunces', serif; font-size: 34px; color: #F3961F; margin-bottom: 10px;">01</div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px; color: #F5F1E9;">Discover</h3>
+        <p style="font-size: 16px; color: #AFBDB2; margin: 0; line-height: 1.6;">Users, goals and constraints, turned into a scoped and testable product plan.</p>
+      </div>
+      <div>
+        <div style="font-family: 'Fraunces', serif; font-size: 34px; color: #F3961F; margin-bottom: 10px;">02</div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px; color: #F5F1E9;">Design</h3>
+        <p style="font-size: 16px; color: #AFBDB2; margin: 0; line-height: 1.6;">UX flows and interfaces with real content, validated before production code.</p>
+      </div>
+      <div>
+        <div style="font-family: 'Fraunces', serif; font-size: 34px; color: #F3961F; margin-bottom: 10px;">03</div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px; color: #F5F1E9;">Engineer</h3>
+        <p style="font-size: 16px; color: #AFBDB2; margin: 0; line-height: 1.6;">Full-stack build, AI where it earns its place, automated tests and CI from day one.</p>
+      </div>
+      <div>
+        <div style="font-family: 'Fraunces', serif; font-size: 34px; color: #F3961F; margin-bottom: 10px;">04</div>
+        <h3 style="font-size: 17px; font-weight: 600; margin: 0 0 8px; color: #F5F1E9;">Ship &amp; scale</h3>
+        <p style="font-size: 16px; color: #AFBDB2; margin: 0; line-height: 1.6;">Cloud infrastructure, monitoring and iteration. We stay on to run and grow it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- START A PRODUCT: the page's primary call to action. Opens start.html (product configurator, ROADMAP Phase 2). -->
+  <section id="start" class="sec st" aria-labelledby="start-title">
+    <div class="st-glow" aria-hidden="true"></div>
+    <img class="st-mark" src="assets/img/lotus-01-720.webp" alt="" width="72" height="72">
+    <div class="sec-eyebrow">Start a product</div>
+    <h2 id="start-title" class="st-title">Have a product in mind?</h2>
+    <p class="st-sub">Answer a few setup questions, pick the package closest to what you need and tick any extras. Send us the plan and our team will talk it through with you. Scope, timeline and pricing follow that conversation.</p>
+    <a href="start.html" class="nsc-btn st-cta">Start a product <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+    <ol class="st-steps">
+      <li><span>1</span>Answer a few setup questions</li>
+      <li><span>2</span>Choose a package and extras</li>
+      <li><span>3</span>Discuss scope, timeline, price</li>
+    </ol>
+    <p class="st-alt">Prefer to describe your idea in your own words? <a href="#contact">Write to us directly</a></p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec ct" aria-labelledby="contact-title">
+    <div class="ct-glow" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Contact</div>
+      <h2 id="contact-title">Let's talk</h2>
+      <p>Tell us what you’re building or what needs improving. We’ll help clarify the scope and next steps.</p>
+    </div>
+    <div class="ct-grid">
+      <form class="ct-card ct-form" id="ct-form" data-to="nischaya.creativesoft@gmail.com" data-endpoint="https://script.google.com/macros/s/AKfycbysaQIUJfeDwX2oTSkR3Bz19G6BuQ7HXKzXkeXdOjbpaibxeyHjTbCY2PkF9ZMdtN3TYA/exec" novalidate>
+        <div class="ct-formhead">
+          <h3 class="ct-h">Tell us about your project</h3>
+          <p>A few details are all we need. Name, email and your message are required; the rest is optional.</p>
+        </div>
+        <div class="ct-plan" id="ct-plan" hidden>
+          <b>Your plan is filled in below</b>
+          <span id="ct-plan-sum"></span>
+          <a href="start.html">Edit plan</a>
+        </div>
+        <div class="ct-field"><label for="ct-name">Name</label><input id="ct-name" name="name" autocomplete="name" required aria-describedby="ct-name-err"><small class="ct-err" id="ct-name-err" hidden></small></div>
+        <div class="ct-two">
+          <div class="ct-field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" autocomplete="email" required aria-describedby="ct-email-err"><small class="ct-err" id="ct-email-err" hidden></small></div>
+          <div class="ct-field"><label for="ct-phone">Mobile number <span>(optional)</span></label><input id="ct-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" aria-describedby="ct-phone-hint ct-phone-err"><small class="ct-hint" id="ct-phone-hint">Helps our team reach you about your enquiry.</small><small class="ct-err" id="ct-phone-err" hidden>Enter a valid mobile number: 10 digits starting 6–9, or an international number with its + country code.</small></div>
+        </div>
+        <div class="ct-field"><label for="ct-msg" id="ct-msg-label">What do you want to build?</label><textarea id="ct-msg" name="message" rows="5" placeholder="What do you need, who is it for, and what should it achieve?" required aria-describedby="ct-msg-err"></textarea><small class="ct-err" id="ct-msg-err" hidden></small></div>
+        <div class="ct-field"><label for="ct-more">Additional details <span>(optional)</span></label><textarea id="ct-more" name="details" rows="3" placeholder="Budget range, timeline, reference links, or existing systems."></textarea></div>
+        <div class="ct-trap" aria-hidden="true"><label for="ct-website">Leave this empty</label><input id="ct-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="ct-actions">
+          <button type="submit" class="nsc-btn ct-submit" id="ct-submit">Send enquiry</button>
+          <button type="button" class="ct-copy" id="ct-copy">Copy enquiry details</button>
+          <a class="ct-plink ct-plink-act" href="privacy.html">Privacy Notice</a>
+        </div>
+        <p class="ct-hint ct-privacy">We’ll use your details to respond to your enquiry. Read our <a href="privacy.html">Privacy Notice</a>.</p>
+        <p class="ct-note" id="ct-note" role="status" aria-live="polite" hidden></p>
+        <textarea class="ct-copybox" id="ct-copybox" rows="6" readonly hidden aria-label="Enquiry details to copy"></textarea>
+        <p class="ct-hint ct-sendnote">Prefer email? Write to <a href="mailto:nischaya.creativesoft@gmail.com">nischaya.creativesoft@gmail.com</a>.</p>
+      </form>
+      <div class="ct-side">
+        <div class="ct-card ct-next">
+          <h3 class="ct-h">What happens next</h3>
+          <ol>
+            <li><span>1</span><div><b>You share your idea</b>Send the form, or email us directly.</div></li>
+            <li><span>2</span><div><b>We get in touch personally</b>A member of our team reads every enquiry and reaches out to you. We usually reply within three business days.</div></li>
+            <li><span>3</span><div><b>We shape it together</b>Scope, timeline and the next steps, planned with you.</div></li>
+          </ol>
+        </div>
+        <div class="ct-card ct-info">
+          <ul>
+            <li><span class="ct-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>Email</b><a class="ct-mail" href="mailto:nischaya.creativesoft@gmail.com">nischaya.creativesoft@gmail.com</a></div></li>
+            <li><span class="ct-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Office</b>Plot 108/part, 335/1, Madhavapuri Township,<br class="ct-br"> South Avenue, PJR Enclave, Chandanagar,<br class="ct-br"> Hyderabad, Telangana 500050</div></li>
+            <li><span class="ct-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Hours</b>Mon–Fri, 10:00 am – 5:00 pm IST</div></li>
+          </ul>
+          <p class="ct-maphead" id="ct-maphead">Office area</p>
+          <div class="ct-map"><iframe title="Office area map: Madhavapuri Township, PJR Enclave, Chandanagar, Hyderabad" src="https://www.google.com/maps?q=17.506132,78.338084&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="ct-maplink" href="https://www.google.com/maps/search/?api=1&amp;query=17.506132,78.338084" target="_blank" rel="noopener">View area on Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+    <footer class="ct-foot">
+      <div class="ct-brand"><img src="assets/img/lotus-01-720.webp" alt="" width="28" height="28"><span>© 2026 Nischaya Creative Soft</span><a class="ct-plink" href="privacy.html">Privacy</a></div>
+      <!-- Social links: hidden until the accounts exist. Add real URLs, then remove `hidden`. -->
+      <nav class="ct-social" aria-label="Social links" hidden><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Instagram</a></nav>
+    </footer>
+  </section>
+  </main>
+
+</div>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+// Nav: keep anchor offsets equal to the real sticky-nav height, and drive the small-screen menu.
+(() => {
+  const nav = document.querySelector('.nsc-nav'), btn = nav.querySelector('.nsc-burger');
+  // Menu jumps land a section's first line (its label) 12px under the nav, skipping the section's own top padding.
+  const GAP = 12, targets = [...new Set([...document.querySelectorAll('a[href^="#"]')].map((a) => a.hash.slice(1)))]
+    .map((id) => document.getElementById(id)).filter((el) => el && el.id !== 'top');
+  const firstLine = (sec) => { for (const el of sec.querySelectorAll('*')) { const cs = getComputedStyle(el); if (cs.position === 'absolute' || el.children.length || !el.getClientRects().length) continue; return el; } return sec; };
+  const setH = () => {
+    document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px');
+    const room = innerHeight - nav.offsetHeight + 1;
+    targets.forEach((sec) => { sec.style.scrollMarginTop = (sec.offsetHeight <= room ? 0 : GAP - (firstLine(sec).getBoundingClientRect().top - sec.getBoundingClientRect().top)) + 'px'; });
+  };
+  setH(); addEventListener('resize', setH); addEventListener('load', setH); document.fonts?.ready.then(setH);
+  const open = (on) => { nav.classList.toggle('open', on); btn.setAttribute('aria-expanded', String(on)); btn.setAttribute('aria-label', on ? 'Close menu' : 'Open menu'); };
+  // Opening moves focus to the first menu link: the links come before the button in the page, so Tab alone would skip them.
+  btn.addEventListener('click', () => { const on = !nav.classList.contains('open'); open(on); if (on) nav.querySelector('#nsc-menu a')?.focus({ preventScroll: true }); });
+  nav.addEventListener('click', (e) => { if (e.target.closest('a')) open(false); });
+  // Tabbing out of the open menu closes it, so focus never lands on content hidden under the panel.
+  nav.addEventListener('focusout', (e) => { if (nav.classList.contains('open') && e.relatedTarget && !nav.contains(e.relatedTarget)) open(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { open(false); btn.focus(); } });
+  const map = document.querySelector('.ct-map'), frame = map && map.querySelector('iframe');
+  if (frame) {
+    addEventListener('blur', () => setTimeout(() => map.classList.toggle('ct-map-focus', document.activeElement === frame)));
+    addEventListener('focus', () => map.classList.remove('ct-map-focus'));
+  }
+  const up = document.getElementById('to-top');
+  addEventListener('scroll', () => up.classList.toggle('show', scrollY > innerHeight * 0.6), { passive: true });
+  up.addEventListener('click', () => { scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); nav.querySelector('.nsc-brand').focus({ preventScroll: true }); });
+})();
+/* In the field carousel: arrows scroll one card; hidden when nothing overflows. */
+(() => {
+  const track = document.getElementById('fx-track'), nav = document.querySelector('.fx-nav');
+  if (track && nav) {
+    const [prev, next] = nav.querySelectorAll('button');
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      nav.hidden = max <= 0; prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft >= max;
+    };
+    nav.addEventListener('click', (e) => {
+      const b = e.target.closest('button'); if (!b) return;
+      const card = track.querySelector('.fx-card'), step = card ? card.getBoundingClientRect().width + 20 : track.clientWidth;
+      const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      track.scrollBy({ left: step * Number(b.dataset.dir), behavior: smooth ? 'smooth' : 'auto' });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update); update();
+  }
+})();
+/* Animated scenes run only while on screen (including cards scrolled sideways out of the carousel), saving battery. */
+(() => {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => e.target.classList.toggle('lx-off', !e.isIntersecting)), { rootMargin: '100px' });
+  document.querySelectorAll('.lx-anim').forEach((el) => io.observe(el));
+})();
+/* Hero reading highlight: a window of up to three words moves through the heading and intro at reading pace,
+   growing from one word and shrinking back to one. Plays on load, then 10s after each pass, at most 3 passes;
+   repeats stop once the visitor scrolls, clicks or types. Coming back to the hero plays it once more.
+   Stops while the hero is off screen or the tab is hidden; skipped entirely for reduced motion. */
+(() => {
+  const copy = document.querySelector('.nsc-hero-copy');
+  if (!copy || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const STEP = 200, PAUSE = 250, BREAK = 450, GAP = 10000, PASSES = 3;
+  // Wrap each word in a span; spaces and <br> stay as they are, so line wrapping is unchanged.
+  const words = [];
+  [copy.querySelector('h1'), copy.querySelector('p')].forEach((block, b) => {
+    const walk = (node) => [...node.childNodes].forEach((n) => {
+      if (n.nodeType === 1) return walk(n);
+      if (n.nodeType !== 3 || !n.data.trim()) return;
+      const alt = n.parentElement.tagName === 'SPAN', frag = document.createDocumentFragment();
+      n.data.split(/(\s+)/).forEach((t) => {
+        if (!t) return;
+        if (/^\s+$/.test(t)) return frag.append(t);
+        const s = document.createElement('span'); s.className = 'rw' + (alt ? ' rw-alt' : ''); s.textContent = t;
+        // A lone dash lights with the word before it rather than taking a step of its own.
+        if (!/[\p{L}\p{N}]/u.test(t) && words.length) words[words.length - 1].push(s); else words.push(Object.assign([s], { block: b }));
+        frag.append(s);
+      });
+      n.replaceWith(frag);
+    });
+    walk(block);
+  });
+  const N = words.length; let i = -1, timer = 0, passes = 0, idle = true, inView = false;
+  const light = (k, on) => words[k]?.forEach((s) => s.classList.toggle('lit', on));
+  const clear = () => { clearTimeout(timer); timer = 0; i = -1; words.forEach((_, k) => light(k, false)); };
+  const step = () => {
+    i++; light(i, true); light(i - 3, false);
+    if (i >= N + 2) { clear(); passes++; if (idle && passes < PASSES) timer = setTimeout(start, GAP); return; }
+    const w = words[i], txt = w ? w[w.length - 1].textContent : '';
+    timer = setTimeout(step, STEP + (/[,.—]$/.test(txt) ? PAUSE : 0) + (w && words[i + 1] && words[i + 1].block !== w.block ? BREAK : 0));
+  };
+  const start = () => { if (inView && !document.hidden) { clear(); step(); } };
+  // Arriving at the hero: the first time starts the full run; any return after that plays one pass.
+  const arrive = () => { if (passes >= PASSES || !idle) passes = PASSES - 1; clear(); timer = setTimeout(start, passes ? 400 : 800); };
+  new IntersectionObserver(([e]) => {
+    const was = inView; inView = e.isIntersecting;
+    if (!inView) clear(); else if (!was) arrive();
+  }).observe(copy);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clear(); else if (inView) arrive(); });
+  const stopRepeats = () => { idle = false; ['wheel', 'touchmove', 'pointerdown', 'keydown'].forEach((t) => removeEventListener(t, stopRepeats)); };
+  ['wheel', 'touchmove', 'pointerdown', 'keydown'].forEach((t) => addEventListener(t, stopRepeats, { passive: true }));
+})();
+/* Contact form: a plan sent from start.html is written into the message. "Sent" is shown only after the server
+   confirms; on failure every field stays as typed, with Retry, email and copy as fallbacks. */
+(() => {
+  const form = document.getElementById('ct-form'); if (!form) return;
+  const $ = (id) => document.getElementById(id), to = form.dataset.to;
+  const msg = $('ct-msg'), note = $('ct-note');
+  // Valid mobile: Indian 10 digits starting 6-9 (optional +91 / 91 / 0 prefix), or any +country number of 8-15 digits.
+  const validPhone = (v) => {
+    const t = v.replace(/[\s().-]/g, '');
+    if (/^\+91/.test(t)) return /^\+91[6-9]\d{9}$/.test(t); // +91 must be a real Indian mobile
+    return /^(?:91|0)?[6-9]\d{9}$/.test(t) || /^\+[1-9]\d{7,14}$/.test(t);
+  };
+  // Inline validation: each field shows its own message under it; values are never cleared. Mobile is optional:
+  // blank passes, anything typed must be a valid number. The email rule matches the server's.
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const RULES = {
+    'ct-name': (v) => (v ? '' : 'Enter your name.'),
+    'ct-email': (v) => (!v ? 'Enter your email address.' : EMAIL.test(v) ? '' : 'Enter a valid email address, like name@example.com.'),
+    'ct-phone': (v) => (!v || validPhone(v) ? '' : 'Enter a valid mobile number: 10 digits starting 6–9 (with or without +91), or an international number with its + country code.'),
+    'ct-msg': (v) => (v ? '' : 'Tell us a little about what you need.'),
+  };
+  const LABEL = { 'ct-name': 'Name', 'ct-email': 'Email', 'ct-phone': 'Mobile number', 'ct-msg': 'Message' };
+  const setErr = (id, text) => {
+    const box = $(id + '-err'), input = $(id);
+    input.setAttribute('aria-invalid', String(!!text));
+    box.textContent = text; box.hidden = !text;
+    if (id === 'ct-phone') $('ct-phone-hint').hidden = !!text;
+  };
+  const check = (id) => { const msg = RULES[id]($(id).value.trim()); setErr(id, msg); return !msg; };
+  const checkAll = () => Object.keys(RULES).filter((id) => !check(id));
+  Object.keys(RULES).forEach((id) => {
+    $(id).addEventListener('input', () => { if ($(id).getAttribute('aria-invalid') === 'true') check(id); }); // clear as soon as fixed
+    if (id === 'ct-email' || id === 'ct-phone') $(id).addEventListener('blur', () => { if ($(id).value.trim() || $(id).getAttribute('aria-invalid') === 'true') check(id); });
+  });
+
+  // Prefill from a plan.
+  const q = new URLSearchParams(location.search), ids = (q.get('plan') || '').split(',').filter(Boolean);
+  const pkg = q.get('pkg') || '', add = (q.get('add') || '').split(',').filter(Boolean);
+  let idea = '', setupInfo = [];
+  const plan = { package: '', features: '', setup: '' };
+  try { idea = sessionStorage.getItem('nsc-idea') || ''; setupInfo = JSON.parse(sessionStorage.getItem('nsc-setup') || '[]'); } catch (e) {}
+  const fill = () => {
+    const FEAT = new Map(), groups = new Map();
+    (window.NSC_CATALOG || []).forEach((g) => g.items.forEach(([id, name]) => FEAT.set(id, { name, group: g.name })));
+    ids.forEach((id) => { const f = FEAT.get(id); if (!f) return; if (!groups.has(f.group)) groups.set(f.group, []); groups.get(f.group).push(f.name); });
+    const n = [...groups.values()].reduce((a, g) => a + g.length, 0);
+    if (!n && !idea && !setupInfo.length) return;
+    const lines = ['Hello Nischaya Creative Soft team,', '', "I'd like to start a product with you. Here is my plan from your website.", ''];
+    if (setupInfo.length) { lines.push('MY SETUP'); setupInfo.forEach(([k, v]) => lines.push(`  ${k}: ${v}`)); lines.push(''); }
+    if (pkg) {
+      lines.push('PACKAGE', pkg, '');
+      const extra = add.map((id) => FEAT.get(id)).filter(Boolean);
+      if (extra.length) { lines.push(`EXTRAS I ADDED (${extra.length})`); extra.forEach((f) => lines.push('  • ' + f.name)); lines.push(''); }
+    }
+    if (idea) lines.push('MY IDEA', idea.trim(), '');
+    if (n) {
+      lines.push(pkg ? `FULL FEATURE LIST (${n})` : `FEATURES I PICKED (${n})`);
+      groups.forEach((names, g) => { lines.push('', g); names.forEach((x) => lines.push('  • ' + x)); });
+      lines.push('');
+    }
+    lines.push('Please get back to me with questions, scope and next steps.');
+    plan.package = pkg;
+    plan.features = [...groups].map(([g, names]) => `${g}: ${names.join(', ')}`).join('\n');
+    plan.setup = setupInfo.map(([k, v]) => `${k}: ${v}`).join('\n');
+    msg.value = lines.join('\n'); msg.classList.add('ct-filled');
+    $('ct-msg-label').textContent = 'Your enquiry (filled in from your plan, edit anything)';
+    $('ct-plan-sum').textContent = (pkg ? pkg + ' · ' : '') + [n && `${n} feature${n > 1 ? 's' : ''}`, idea && 'your idea', setupInfo.length && 'your setup'].filter(Boolean).join(' and ');
+    $('ct-plan').hidden = false;
+    history.replaceState(null, '', location.pathname + '#contact');
+    const land = () => document.getElementById('contact').scrollIntoView({ behavior: 'instant' });
+    land(); if (document.readyState !== 'complete') addEventListener('load', land, { once: true });
+  };
+  // "Edit plan" keeps what was already typed here (the message is rebuilt from the updated plan).
+  const KEEP = ['ct-name', 'ct-email', 'ct-phone', 'ct-more'];
+  $('ct-plan').querySelector('a').addEventListener('click', () => {
+    try { sessionStorage.setItem('nsc-contact', JSON.stringify(Object.fromEntries(KEEP.map((id) => [id, $(id).value])))); } catch (e) {}
+  });
+  try {
+    const kept = JSON.parse(sessionStorage.getItem('nsc-contact') || 'null'); sessionStorage.removeItem('nsc-contact');
+    if (kept) KEEP.forEach((id) => { if (!$(id).value && kept[id]) $(id).value = kept[id]; });
+  } catch (e) {}
+  if (ids.length) {
+    const s = document.createElement('script'); s.src = 'assets/js/catalog.js'; s.onload = fill; s.onerror = fill; document.head.append(s);
+  } else if ((idea || setupInfo.length) && location.hash === '#contact') fill();
+
+  // The email we send: subject + body with the visitor's details, their message and any extra details.
+  const compose = () => {
+    const v = (id) => $(id).value.trim(), more = v('ct-more');
+    const body = [v('ct-msg'), ...(more ? ['', 'ADDITIONAL DETAILS', more] : []), '', '—',
+      `Name: ${v('ct-name')}`, `Email: ${v('ct-email')}`, ...(v('ct-phone') ? [`Mobile: ${v('ct-phone')}`] : [])].join('\n');
+    return { subject: `Product enquiry from ${v('ct-name')}`, body };
+  };
+  const say = (text, bad = false) => { note.replaceChildren(text); note.classList.toggle('ct-bad', bad); note.hidden = false; };
+  const submit = $('ct-submit');
+  const mailtoHref = () => { const { subject, body } = compose(); return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; };
+  // Failure note: what went wrong, then the ways forward. Nothing typed is cleared.
+  const fail = (why) => {
+    const mail = document.createElement('a'); mail.href = mailtoHref(); mail.textContent = 'email it to us';
+    const copy = document.createElement('button'); copy.type = 'button'; copy.textContent = 'copy it';
+    copy.addEventListener('click', () => $('ct-copy').click());
+    note.replaceChildren(`${why} Your details are still here: press Retry, or `, mail, ' / ', copy, '.');
+    note.classList.add('ct-bad'); note.hidden = false;
+    submit.textContent = 'Retry';
+  };
+  const REASON = {
+    off: "Online sending isn't switched on yet, so your enquiry wasn't sent.",
+    network: "We couldn't reach our server, so we can't confirm your enquiry was sent.",
+    too_fast: 'That was very quick, so our spam check stopped it. Please check your details.',
+    rate_limited: "We're receiving a lot of enquiries right now. Please try again in a few minutes.",
+    busy: "We're receiving a lot of enquiries right now. Please try again in a few minutes.",
+    invalid: 'Some details didn’t pass our check. Please review the highlighted fields.',
+  };
+  const FIELD = { name: 'ct-name', email: 'ct-email', phone: 'ct-phone', message: 'ct-msg', details: 'ct-more' };
+
+  // A retry of the same text reuses its id, so one enquiry is never recorded twice; any edit gets a new id.
+  let sending = false, lastBody = '', subId = '';
+  const newId = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random()).replace(/[^A-Za-z0-9]/g, '').slice(0, 40);
+  let startedAt = 0; form.addEventListener('focusin', () => { startedAt ||= Date.now(); });
+
+  // Anonymous usage counts: event name and a fixed page label only (nothing typed, no visitor ID). Sent in the
+  // background; any problem is ignored so it can never get in the way of an enquiry.
+  const track = (event, category) => {
+    try {
+      const endpoint = (form.dataset.endpoint || '').trim(); if (!endpoint) return;
+      fetch(endpoint, { method: 'POST', keepalive: true, body: JSON.stringify({ kind: 'event', event, category, page: 'contact', eid: newId() }) }).catch(() => {});
+    } catch (e) {}
+  };
+  let started = false; // one form_started per attempt; a new attempt begins after a successful send
+  form.addEventListener('input', (e) => { if (!started && e.isTrusted && e.target.id !== 'ct-website') { started = true; track('form_started'); } });
+  let lastMail = 0;
+  document.getElementById('contact').addEventListener('click', (e) => {
+    if (!e.target.closest('a[href^="mailto:"]') || Date.now() - lastMail < 1500) return; // ignore double clicks
+    lastMail = Date.now(); track('email_clicked');
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (sending) return; // duplicate-submit guard while a request is in flight
+    const bad = checkAll();
+    if (bad.length) {
+      $(bad[0]).focus();
+      say(bad.length === 1 ? `Please check ${LABEL[bad[0]]}.` : `Please check ${bad.length} fields: ${bad.map((id) => LABEL[id]).join(', ')}.`, true);
+      return;
+    }
+    const endpoint = (form.dataset.endpoint || '').trim();
+    if (!endpoint) return fail(REASON.off);
+    const v = (id) => $(id).value.trim();
+    const data = { name: v('ct-name'), email: v('ct-email'), phone: v('ct-phone'), message: v('ct-msg'), details: v('ct-more'),
+      package: plan.package, features: plan.features, setup: plan.setup };
+    const body = JSON.stringify(data);
+    if (body !== lastBody) { lastBody = body; subId = newId(); }
+    sending = true; submit.disabled = true; submit.textContent = 'Sending…'; form.setAttribute('aria-busy', 'true');
+    say('Sending your enquiry…');
+    let res = null;
+    try {
+      const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 25000);
+      const r = await fetch(endpoint, { method: 'POST', body: JSON.stringify({ ...data, id: subId, website: $('ct-website').value,
+        elapsed: startedAt ? Date.now() - startedAt : Math.round(performance.now()), page: location.origin + location.pathname }), signal: ctrl.signal });
+      clearTimeout(timer);
+      res = r.ok ? await r.json() : null;
+    } catch (err) { res = null; }
+    sending = false; submit.disabled = false; form.removeAttribute('aria-busy');
+    Object.values(FIELD).forEach((id) => (RULES[id] ? setErr(id, '') : $(id).removeAttribute('aria-invalid')));
+    if (res && res.ok === true) {
+      const name = data.name.split(' ')[0];
+      form.reset(); lastBody = ''; startedAt = 0; started = false; submit.textContent = 'Send enquiry';
+      $('ct-plan').hidden = true; msg.classList.remove('ct-filled'); $('ct-msg-label').textContent = 'What do you want to build?';
+      plan.package = plan.features = plan.setup = '';
+      try { ['nsc-idea', 'nsc-setup', 'nsc-plan-state', 'nsc-contact'].forEach((k) => sessionStorage.removeItem(k)); } catch (err) {}
+      say(`Thank you, ${name}. Your enquiry has reached us, and our team will get in touch with you soon.`);
+      return;
+    }
+    if (res && res.error === 'invalid' && Array.isArray(res.fields)) {
+      res.fields.forEach((f) => { const id = FIELD[f]; if (!id) return; if (RULES[id] && !check(id)) return; if (RULES[id]) setErr(id, 'Please check this field.'); else $(id).setAttribute('aria-invalid', 'true'); });
+      const first = res.fields.map((f) => FIELD[f]).find(Boolean); if (first) $(first).focus();
+    }
+    if (!res) track('submission_failed', 'network'); // the server counts every failure it answers; this is the one it can't see
+    fail(REASON[res ? res.error : 'network'] || "Something went wrong on our side, so your enquiry wasn't saved.");
+  });
+  // Copy: clipboard first; if the browser blocks it, show the text selected in a box so it can be copied by hand.
+  $('ct-copy').addEventListener('click', async () => {
+    const { subject, body } = compose(), text = `To: ${to}\nSubject: ${subject}\n\n${body}`, box = $('ct-copybox');
+    box.hidden = true;
+    try { await navigator.clipboard.writeText(text); say(`Enquiry details copied. Paste them into an email to ${to}.`); return; } catch (e) {}
+    box.value = text; box.hidden = false; box.focus(); box.select();
+    let copied = false; try { copied = document.execCommand('copy'); } catch (e) {}
+    say(copied ? `Enquiry details copied. Paste them into an email to ${to}.`
+      : `Couldn't copy automatically. The details are selected in the box below: press Ctrl+C (Cmd+C on Mac) to copy them, then email them to ${to}.`, !copied);
+  });
+})();
+</script>
+</body>
+</html>
