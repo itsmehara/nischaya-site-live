@@ -7,6 +7,19 @@
 <meta name="description" content="What the Nischaya Creative Soft enquiry form collects, how we use it, and how to ask us to delete it.">
 <link rel="canonical" href="https://nischayacreativesoft.com/privacy.html">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nischaya Creative Soft">
+<meta property="og:title" content="Privacy Notice · Nischaya Creative Soft">
+<meta property="og:description" content="What the Nischaya Creative Soft enquiry form collects, how we use it, and how to ask us to delete it.">
+<meta property="og:url" content="https://nischayacreativesoft.com/privacy.html">
+<meta property="og:image" content="https://nischayacreativesoft.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nischaya Creative Soft lotus logo with the line: We build digital products, end to end.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&amp;family=Work+Sans:wght@400;600&amp;display=swap">
@@ -36,6 +49,18 @@
   .top a:focus-visible, .card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   @media (max-width: 520px) { .brand { font-size: 19px; gap: 10px; } .brand img { width: 36px; height: 36px; } .to-site { display: none; } .top { padding-top: 14px; padding-bottom: 14px; } }
   @media (max-width: 560px) { main, .top { padding-left: 16px; padding-right: 16px; } main { padding-top: 24px; } h1 { font-size: 30px; } .card { padding: 18px; } }
+  /* Site footer (slim version of the homepage footer) */
+  .sf { margin-top: 48px; background: #060807; border-top: 1px solid rgba(255,255,255,.08); color: #8A978D; font-size: 14px; }
+  .sf-in { max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
+  .sf-logo { display: inline-flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: #FBF8F2; text-decoration: none; }
+  .sf-logo img { width: 30px; height: 30px; object-fit: contain; }
+  .sf nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  .sf nav a { color: #C9C3B8; text-decoration: none; font-size: 15px; }
+  .sf a:hover { color: #F3961F; }
+  .sf a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius: 4px; }
+  .sf-bar { max-width: 1200px; margin: 0 auto; padding: 16px 96px 24px 32px; border-top: 1px solid rgba(255,255,255,.06); }
+  @media (max-width: 560px) { .sf nav { gap: 0 22px; } .sf nav a { display: inline-block; padding: 14px 0; } }
+  @media (max-width: 560px) { .sf-in { padding: 24px 16px; } .sf-bar { padding: 14px 80px 20px 16px; } }
 </style>
 </head>
 <body>
@@ -89,5 +114,19 @@
     </ul>
   </section>
 </main>
+<footer class="sf">
+  <div class="sf-in">
+    <a class="sf-logo" href="index.html"><img src="assets/img/lotus-01-720.webp" alt="" width="30" height="30" loading="lazy">Nischaya Creative Soft</a>
+    <nav aria-label="Footer">
+      <a href="index.html#capabilities">Services</a>
+      <a href="index.html#work">Products</a>
+      <a href="start.html">Plan your product</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy Notice</a>
+      <a href="mailto:nischaya.creativesoft@gmail.com">nischaya.creativesoft@gmail.com</a>
+    </nav>
+  </div>
+  <div class="sf-bar">© 2026 Nischaya Creative Soft · Hyderabad, India</div>
+</footer>
 </body>
 </html>
