@@ -437,6 +437,7 @@ a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius
   main#main:focus { outline: none; }
   .sec-head p.fx-note { font-size: 16px !important; margin-top: 10px; }
 </style>
+<script src="assets/js/consent.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -859,7 +860,7 @@ a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius
       </div>
     </div>
     <div class="sf-bar">
-      <span>© 2026 Nischaya Creative Soft · Hyderabad, India</span>
+      <span>© 2026 Nischaya Creative Soft · Hyderabad, India · <button type="button" class="sf-cookie">Cookie settings</button></span>
       <span>Product development · Web &amp; mobile · AI · Cloud</span>
     </div>
   </footer>
@@ -1138,6 +1139,7 @@ a:focus-visible { outline: 2px solid #F3961F; outline-offset: 3px; border-radius
       plan.package = plan.features = plan.setup = '';
       try { ['nsc-idea', 'nsc-setup', 'nsc-plan-state', 'nsc-contact'].forEach((k) => sessionStorage.removeItem(k)); } catch (err) {}
       say(`Thank you, ${name}. Your enquiry has reached us, and our team will get in touch with you soon.`);
+      window.nscEvent?.('generate_lead'); // Google Analytics, only if the visitor accepted cookies
       return;
     }
     if (res && res.error === 'invalid' && Array.isArray(res.fields)) {
